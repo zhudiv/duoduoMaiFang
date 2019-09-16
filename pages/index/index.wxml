@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="index">
+  <view class="topIndex">
+    <view class="baner-left" bindtap='Gocity' style="background-color:rgba(89, 107, 107,0.6);">
+      <view class="address" >宁波</view>
+    </view>
+    <input type="text" placeholder="搜索"></input>
+  </view>
+
+      <!-- banner -->
+      <view class="banner_a swiper-container ">
+        <view class="banner">
+          <swiper class="swiper swiper-box swiper-boxa" current="{{current}}" indicator-dots="true" autoplay="false" interval="5000" duration="1000" indicator-active-color="#Fff">
+            <block wx:for="{{Movies}}" wx:for-item="mov" wx:key="key">
+              <swiper-item>
+                <view>
+                  <navigator url="{{mov.Url}}" hover-class="navigator-hover">
+                    <image src="{{mov.Picture}}" class="banner" background-size="cover" mode="scaleToFill"></image>
+                  </navigator>
+                </view>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+      </view>
+  
+</view>
