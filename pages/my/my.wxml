@@ -1,0 +1,104 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+  <!-- <view class="container_head" bindtap="goLogin">
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <view class="info">
+      <text class="name">{{userInfo.nickName}}</text>
+    </view>
+  </view> -->
+  <view class="container_head">
+    <view class="profile-info" bindtap="goLogin">
+      <view> <image class="avatar" src="{{userInfo.avatarUrl}}"></image></view>
+      <view wx:if="{{hasLogin}}" class="profile-info-text">欢迎您！{{userInfo.nickName}}</view>
+      <view wx:else class="profile-info-text">请登入</view>
+    </view>
+    
+    <view class="profile-detail">
+      <view class="profile-jifen">
+        <view class="profile-jifen-num"><text>6999</text></view>
+        <view class="profile-jifen-title"><text>积分</text></view>
+      </view>
+
+      <view class="profile-discount">
+        <view class="profile-discount-num"><text>8</text></view>
+        <view class="profile-discount-title"><text>优惠券</text></view>
+      </view>
+    </view>
+  </view>
+
+  <view class='separate'></view>
+
+
+    <view class='user_area'>
+    <view class='user_row' bindtap='goOrder'>
+      <view class='user_row_left'>我的订单</view>
+      <view class="user_row_right">
+        <view class='user_row_right_text'>全部订单</view>
+        <image class='user_row_right_image' src='../../images/goright.png'>全部订单</image>
+      </view>
+    </view>
+    <view class='user_column'>
+      <view class='user_column_item' bindtap='goOrderIndex' data-index='1' data-route='/pages/ucenter/order/order'>
+        <text class="user_column_item_badge" wx:if="{{order.unpaid != 0}}">{{order.unpaid}}</text>
+        <image class='user_column_item_image' src='../../images/pendpay.png'>
+        </image>
+        <view class='user_column_item_text'>待付款</view>
+      </view>
+
+      <view class='user_column_item' bindtap='goOrderIndex' data-index='2' data-route='/pages/ucenter/order/order'>
+        <text class="user_column_item_badge" wx:if="{{order.unrecv != 0}}">{{order.unrecv}}</text>
+        <image class='user_column_item_image' src='../../images/receive.png'></image>
+        <view class='user_column_item_text'>待收货</view>
+      </view>
+
+      <view class='user_column_item' bindtap='goOrderIndex' data-index='3' data-route='/pages/ucenter/order/order'>
+        <text class="user_column_item_badge" wx:if="{{order.uncomment != 0}}">{{order.uncomment}}</text>
+        <image class='user_column_item_image' src='../../images/comment.png'></image>
+        <view class='user_column_item_text'>待评价</view>
+      </view>
+
+      <view class='user_column_item' bindtap='goAfterSale'>
+        <image class='user_column_item_image' src='../../images/aftersale.png'></image>
+        <view class='user_column_item_text'>售后</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='separate'></view>
+
+  <view class='my_list_ul'>
+    <navigator url="" hover-class="navigator-hover">
+        <view class='my_list_li'>
+          <view class='my_list_lia'>
+            <view class='my_list_ab'>
+              <image src='../../images/my_address.png' class='my_list_img' background-size="cover" mode='mode="scaleToFill'></image>
+            </view>
+            <view class='my_list_ac'>
+              <text>地址管理</text>
+            </view>
+            <view class='my_list_ad'>
+              <image src='../../images/shop_xq_b.png' class='my_list_imga' background-size="cover" mode='mode="scaleToFill'></image>
+            </view>
+          </view>
+        </view>
+      </navigator>
+
+
+      <navigator url="" hover-class="navigator-hover">
+        <view class='my_list_li'>
+          <view class='my_list_lia'>
+            <view class='my_list_ab'>
+              <image src='../../images/my_exchange.png' class='my_list_img' background-size="cover" mode='mode="scaleToFill'></image>
+            </view>
+            <view class='my_list_ac'>
+              <text>兑换记录</text>
+            </view>
+            <view class='my_list_ad'>
+              <image src='../../images/shop_xq_b.png' class='my_list_imga' background-size="cover" mode='mode="scaleToFill'></image>
+            </view>
+          </view>
+        </view>
+      </navigator>
+  </view>
+
+</view>
