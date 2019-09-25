@@ -1,0 +1,12 @@
+<!--pages/login/login.wxml-->
+<text>pages/login/login.wxml</text>
+<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+<button open-type="getPhoneNumber" bindgetphonenumber="bindGetPhoneNumber">获取手机号</button>
+<block class="container">
+  <!-- {{test}}--
+  {{openid}} -->
+  <view>
+    <image src="{{userInfo.avatarUrl}}"></image>
+    <button type="text">{{userInfo.nickName}}</button>
+  </view>
+</block>

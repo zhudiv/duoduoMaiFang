@@ -1,0 +1,44 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/my/my",
+    "pages/my/login/login",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00baad",
+    "navigationBarTitleText": "邻里物联",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_homea.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "业主超市",
+        "iconPath": "images/icon_market.png",
+        "selectedIconPath": "images/icon_marketa.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "购物车",
+        "iconPath": "images/icon_shopping.png",
+        "selectedIconPath": "images/icon_shoppinga.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/icon_my.png",
+        "selectedIconPath": "images/icon_mya.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
