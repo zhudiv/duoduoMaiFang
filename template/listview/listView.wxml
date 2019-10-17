@@ -1,0 +1,37 @@
+<template name="listView">
+	<!-- <view style="display:inline-block">
+		<image class="imageView" mode="aspectFill" src="{{src}}"></image>
+  </view>
+	<view style="display:inline-block">
+		<text>宁波湾·星钻</text>
+	</view> -->
+
+	<view class="flex  p-xs margin-bottom-sm mb-sm align-center">
+      <!-- <view class="flex-sub bg-grey padding-sm margin-xs radius"> -->
+			<view class="flex-sub radius">
+				<image class="imageView" mode="aspectFill" src="{{src}}"></image>
+			</view>
+      <view class="flex-twice bg-white radius">
+				<view>
+					<text class="text-black text-bold padding-xs" >宁波湾·星钻</text>
+				</view>
+				
+				<!-- <view>
+					<view >
+						<view class="cu-tag bg-cyan light z-icon">零首付</view>
+						<view class="cu-tag bg-orange light z-icon">送邻里币</view>
+    				<view class="cu-tag bg-pink light z-icon">家电大礼包</view>
+					</view>
+				</view> -->
+
+				<view class="flex padding-xs justify-start">
+						<view class="cu-tag bg-cyan light  z-icon">零首付</view>
+						<view class="cu-tag bg-orange light  z-icon">送邻里币</view>
+    				<view class="cu-tag bg-pink light  z-icon">家电大礼包</view>
+				</view>
+				<view>
+					<text class="text-price text-red padding-xs">10000~20000</text>
+				</view>
+			</view>
+    </view>
+</template>

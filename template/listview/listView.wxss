@@ -1,0 +1,8 @@
+.imageView{
+	width: 232rpx;
+	height: 160rpx;
+}
+
+.z-icon{
+	padding: 0 !important;
+}

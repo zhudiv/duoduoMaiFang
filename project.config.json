@@ -5,11 +5,12 @@
 	},
 	"setting": {
 		"urlCheck": true,
-		"es6": false,
+		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
@@ -22,7 +23,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.8.2",
-	"appid": "wxdc185a51237db288",
+	"appid": "wx452861bdcf531613",
 	"projectname": "%E5%A4%9A%E5%A4%9A%E5%8D%96%E6%88%BF",
 	"debugOptions": {
 		"hidedInDevtools": []

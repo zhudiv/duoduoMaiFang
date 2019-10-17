@@ -1,0 +1,26 @@
+{
+  "name": "zanui",
+  "version": "1.0.0",
+  "description": "zanui",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "vant-weapp": "^1.0.0-beta.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhudiv/duoduoMaiFang.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhudiv/duoduoMaiFang/issues"
+  },
+  "homepage": "https://github.com/zhudiv/duoduoMaiFang#readme"
+}
