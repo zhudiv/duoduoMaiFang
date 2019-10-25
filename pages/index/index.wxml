@@ -109,7 +109,32 @@
 
   <view class="separate"></view>
 
-  <view class="CarHomeLists">
+  <view class="flex padding justify-around bg-white">
+      <view class="zd-bg-grey padding-top padding-left margin-xs radius10" data-idy="0" bindtap="goDetail">
+        <view>
+          <text class="text-lg">邻里车位</text>
+        </view>
+        <view>
+          <text class="text-sm" style="color:#C0C8D3">零首付/送家电/拿十万邻 里币</text>
+        </view>
+        <view style="text-align:center">
+          <image src="https://www.vvwed.com/static/images/index/home_index_car.png" style="width:260rpx;height:70rpx;"></image>
+        </view>
+      </view>
+      <view class="zd-bg-grey padding-top padding-left margin-xs radius10" data-idy="1" bindtap="goDetail">
+        <view>
+          <text class="text-lg">邻里住宅</text>
+        </view>
+        <view>
+          <text class="text-sm" style="color:#C0C8D3">品牌新房/限时特惠/精品 优选</text>
+        </view>
+        <view style="text-align:center">
+          <image src="https://www.vvwed.com/static/images/index/home_index_house.png" style="width:200rpx;height:110rpx;"></image>
+        </view>
+      </view>
+    </view>
+
+  <!-- <view class="CarHomeLists">
     <view class="navbar">
       <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
         <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
@@ -146,7 +171,7 @@
         </view>
       </view>
     </scroll-view>
-  </view>
+  </view> -->
   
 
   <!-- 新品推荐 -->

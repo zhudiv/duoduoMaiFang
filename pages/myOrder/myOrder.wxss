@@ -1,0 +1,11 @@
+/* pages/myOrder/myOrder.wxss */
+
+.textStyle{
+  font-weight: Regular;
+  font-size: 28rpx;
+  color: #969799;
+}
+
+image{
+  background-size: cover;
+}

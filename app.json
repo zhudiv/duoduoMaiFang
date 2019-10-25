@@ -1,16 +1,36 @@
 {
   "pages": [
-    "pages/projectList/projectList",
     "pages/index/index",
+    "pages/myOrder/myOrder",
+    
+    "pages/afterSaleing/afterSaleing",
+    "pages/afterSale/afterSale",
+    "pages/shopEvaluate/shopEvaluate",
+
+    
+    
+    "pages/evaluate/evaluate",
+    "pages/addrEdit/addrEdit",
+    "pages/addrList/addrList",
+    "pages/llRecord/llRecord",
     "pages/my/my",
+    
+    
+    "pages/category/category",
+    "pages/market/market",
+    "pages/giftDetail/giftDetail",
+    "pages/projectList/projectList",
+    "pages/projectDetail/projectDetail",
+    "pages/exchange/exchange",
+    
     "pages/my/login/login",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#00baad",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "邻里物联",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "list": [
@@ -21,7 +41,7 @@
         "selectedIconPath": "images/icon_homea.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/market/market",
         "text": "业主超市",
         "iconPath": "images/icon_market.png",
         "selectedIconPath": "images/icon_marketa.png"

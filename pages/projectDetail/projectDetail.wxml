@@ -1,0 +1,59 @@
+<!--pages/projectDetail/projectDetail.wxml-->
+<!-- 
+ -->
+<view class="container">
+  <view class="headShow">
+    <scroll-view scroll-x class="bg-white nav">
+      <view class="flex text-center">
+        <view class="cu-item flex-sub " wx:for="{{tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+          <view class="cu-item flex-sub {{index==TabCur?'text-zdy-darkblue cur':''}}">
+            <text class="text-black">{{item}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view>
+      <image src="{{imageLists[TabCur].src}}"></image>
+    </view>
+  </view>
+  <view class="bodyShow">
+    <view style="padding-top:32rpx;">
+      <view><text class="text-title1">中环道小区</text></view>
+      <view style="padding-top:5px;"><text class="text-info1">【现房“光盘”最高送8万家电大礼包，无首付。给车一个 个家，名额只限前50名】</text></view>
+      <view style="padding-top:5px;"><text class="text-info2">零首付得10万车位/拿市值10万赠品/得10万商城购物券</text></view>
+      <view style="padding-top:13px;padding-bottom:17px;"><text class="text-info3">车位价：</text><text class="text-info4">￥10000</text></view>
+    </view>
+ 
+  <view class="sperate" style="padding-left:0"></view>
+  <view class="giftType" style="padding-bottom:200rpx;padding-top:18rpx;">
+    <view style="font-size:14px;font-weight:Regular;">礼品类型</view>
+    <view class="flex solid-bottom padding justify-start">
+      <view class="giftTypeCell zd-bg-gray margin-right-sm radius {{index==giftTabCur?'zd-text':''}}"  wx:for="{{giftLists}}" wx:key bindtap="giftTabSelect" data-id="{{index}}">{{item.name}}</view>
+      <!-- <view class="giftTypeCell zd-bg-gray  margin-right-sm radius">礼品二</view>
+      <view class="giftTypeCell zd-bg-gray margin-right-sm radius">礼品三</view> -->
+    </view>
+
+    <scroll-view  scroll-x="true" style=" white-space: nowrap; display: flex"  >
+    <!-- <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%"> -->
+        <view wx:for="{{imaggeDetailList}}" style="background: red; width: 100rpx; height: 100rpx; display: inline-block" >
+          <image style="width: 100rpx; height: 100rpx; mode:scaleToFill;" src="{{item}}"></image>
+        </view>
+        <!-- <view style="background: green; width: 100rpx; height: 100rpx; display: inline-block"></view>
+        <view style="background: blue; width: 100rpx; height: 100rpx; display: inline-block"></view>
+        <view style="background: yellow; width: 100rpx; height: 100rpx; display: inline-block"></view>
+          <view style="background: red; width: 100rpx; height: 100rpx; display: inline-block" ></view>
+        <view style="background: green; width: 100rpx; height: 100rpx; display: inline-block"></view>
+        <view style="background: blue; width: 100rpx; height: 100rpx; display: inline-block"></view>
+        <view style="background: yellow; width: 100rpx; height: 100rpx; display: inline-block"></view>
+          <view style="background: red; width: 100rpx; height: 100rpx; display: inline-block" ></view>
+        <view style="background: green; width: 100rpx; height: 100rpx; display: inline-block"></view>
+        <view style="background: blue; width: 100rpx; height: 100rpx; display: inline-block"></view>
+        <view style="background: yellow; width: 100rpx; height: 100rpx; display: inline-block"></view> -->
+    </scroll-view>
+  </view>
+
+   </view>
+
+  <view style="clear:both"></view>
+  <button style="position:fixed;bottom:0;width:100%;background-color:#294D7D;color:white;z-index:10" bindtap="goGiftDetail">下一步</button>
+</view>

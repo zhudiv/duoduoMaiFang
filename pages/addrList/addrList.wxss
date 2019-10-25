@@ -1,0 +1,7 @@
+/* pages/addrList/addrList.wxss */
+.content{
+  font-size: 30rpx;
+line-height: 1.6em;
+flex: 1;
+
+}

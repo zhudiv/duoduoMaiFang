@@ -1,104 +1,155 @@
 <!--pages/my/my.wxml-->
 <view class="container">
-  <!-- <view class="container_head" bindtap="goLogin">
-    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
-    <view class="info">
-      <text class="name">{{userInfo.nickName}}</text>
-    </view>
-  </view> -->
-  <view class="container_head">
-    <view class="profile-info" bindtap="goLogin">
-      <view> <image class="avatar" src="{{userInfo.avatarUrl}}"></image></view>
+
+  <view class="container_head margin bg-white radius10">
+    <view class="profile-info " bindtap="goLogin">
+      <view>
+        <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      </view>
       <view wx:if="{{hasLogin}}" class="profile-info-text">欢迎您！{{userInfo.nickName}}</view>
       <view wx:else class="profile-info-text">请登入</view>
-    </view>
-    
-    <view class="profile-detail">
-      <view class="profile-jifen">
-        <view class="profile-jifen-num"><text>6999</text></view>
-        <view class="profile-jifen-title"><text>积分</text></view>
-      </view>
 
-      <view class="profile-discount">
-        <view class="profile-discount-num"><text>8</text></view>
-        <view class="profile-discount-title"><text>优惠券</text></view>
+      
+      <view style="display:inline-block;position:absolute;" bindtap="goLlRecord"> 
+        邻里币
       </view>
     </view>
-  </view>
-
-  <view class='separate'></view>
 
 
-    <view class='user_area'>
-    <view class='user_row' bindtap='goOrder'>
-      <view class='user_row_left'>我的订单</view>
-      <view class="user_row_right">
-        <view class='user_row_right_text'>全部订单</view>
-        <image class='user_row_right_image' src='../../images/goright.png'>全部订单</image>
-      </view>
-    </view>
-    <view class='user_column'>
-      <view class='user_column_item' bindtap='goOrderIndex' data-index='1' data-route='/pages/ucenter/order/order'>
-        <text class="user_column_item_badge" wx:if="{{order.unpaid != 0}}">{{order.unpaid}}</text>
-        <image class='user_column_item_image' src='../../images/pendpay.png'>
-        </image>
-        <view class='user_column_item_text'>待付款</view>
-      </view>
-
-      <view class='user_column_item' bindtap='goOrderIndex' data-index='2' data-route='/pages/ucenter/order/order'>
-        <text class="user_column_item_badge" wx:if="{{order.unrecv != 0}}">{{order.unrecv}}</text>
-        <image class='user_column_item_image' src='../../images/receive.png'></image>
-        <view class='user_column_item_text'>待收货</view>
-      </view>
-
-      <view class='user_column_item' bindtap='goOrderIndex' data-index='3' data-route='/pages/ucenter/order/order'>
-        <text class="user_column_item_badge" wx:if="{{order.uncomment != 0}}">{{order.uncomment}}</text>
-        <image class='user_column_item_image' src='../../images/comment.png'></image>
-        <view class='user_column_item_text'>待评价</view>
-      </view>
-
-      <view class='user_column_item' bindtap='goAfterSale'>
-        <image class='user_column_item_image' src='../../images/aftersale.png'></image>
-        <view class='user_column_item_text'>售后</view>
-      </view>
-    </view>
-  </view>
-
-  <view class='separate'></view>
-
-  <view class='my_list_ul'>
-    <navigator url="" hover-class="navigator-hover">
-        <view class='my_list_li'>
-          <view class='my_list_lia'>
-            <view class='my_list_ab'>
-              <image src='../../images/my_address.png' class='my_list_img' background-size="cover" mode='mode="scaleToFill'></image>
-            </view>
-            <view class='my_list_ac'>
-              <text>地址管理</text>
-            </view>
-            <view class='my_list_ad'>
-              <image src='../../images/shop_xq_b.png' class='my_list_imga' background-size="cover" mode='mode="scaleToFill'></image>
-            </view>
-          </view>
+    <view class="flex">
+      <view class="flex-sub padding-sm">
+        <view class="profile-jifen-num">
+          <text>500</text>
         </view>
+        <view class="profile-jifen-title">
+          <text>所得邻里币(元)</text>
+        </view>
+      </view>
+      <view class="flex-sub padding-sm">
+        <view class="profile-jifen-num">
+          <text>55500</text>
+        </view>
+        <view class="profile-jifen-title">
+          <text>55500</text>
+        </view>
+      </view>
+      <view class="flex-sub padding-sm">
+        <view class="profile-jifen-num">
+          <text>55500</text>
+        </view>
+        <view class="profile-jifen-title">
+          <text>共节省金额(元)</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="zdTitle margin" style="text-align:left;">我的订单</view>
+  
+  
+  
+  <view style="width:100%；height:200rpx;" class="bg-white margin radius10">
+    <view class="flex solid-bottom padding-left padding-right justify-between">
+      <view class="padding-sm margin-xs radius">
+        <view >
+          <image src="../../images/my/ic_order_me.png" style="width:50rpx;height:50rpx;"></image>
+        </view>
+        <view>
+        <text class="myOrderText">全部订单</text>
+          
+        </view>
+      </view>
+      <view class=" padding-sm margin-xs radius">
+       <view>
+          <image src="../../images/my/ic_obligation_me.png" style="width:50rpx;height:50rpx;"></image>
+        </view>
+        <view>
+        <text class="myOrderText">待付款</text>
+          
+        </view>  
+      </view>
+      <view class=" padding-sm margin-xs radius">
+        <view >
+          <image src="../../images/my/ic_wait_me.png" style="width:50rpx;height:50rpx;"></image>
+        </view>
+        <view>
+        <text class="myOrderText">待收货</text>
+          
+        </view>
+      </view>
+    </view>
+    <view class="flex solid-bottom padding-left padding-right justify-between">
+      <view class=" padding-sm margin-xs radius">
+        <view >
+          <image src="../../images/my/ic_complete_me.png" style="width:50rpx;height:50rpx;"></image>
+        </view>
+        <view>
+        <text class="myOrderText">已完成</text>
+          
+        </view>
+      </view>
+      <navigator url="../evaluate/evaluate" hover-class="navigator-hover">
+      <view class=" padding-sm margin-xs radius">
+       <view >
+          <image src="../../images/my/ic_ service_me.png" style="width:50rpx;height:50rpx;"></image>
+        </view>
+        <view>
+        <text class="myOrderText">待评价</text>
+          
+        </view>  
+      </view>
       </navigator>
 
+      <navigator url="../afterSale/afterSale" hover-class="navigator-hover">
+      <view class=" padding-sm margin-xs radius">
+        <view >
+          <image src="../../images/my/ic_ service_me .png" style="width:50rpx;height:50rpx;"></image>
+        </view>
+        <view>
+        <text class="myOrderText">售后</text>
+          
+        </view>
+      </view>
+      </navigator>
+    </view>
+  </view>
+  
 
-      <navigator url="" hover-class="navigator-hover">
-        <view class='my_list_li'>
-          <view class='my_list_lia'>
-            <view class='my_list_ab'>
-              <image src='../../images/my_exchange.png' class='my_list_img' background-size="cover" mode='mode="scaleToFill'></image>
-            </view>
-            <view class='my_list_ac'>
-              <text>兑换记录</text>
-            </view>
-            <view class='my_list_ad'>
-              <image src='../../images/shop_xq_b.png' class='my_list_imga' background-size="cover" mode='mode="scaleToFill'></image>
-            </view>
+<view class="zdTitle margin" style="text-align:left;">我的工具</view>
+<view class='my_list_ul margin radius10'>
+    <navigator url="../addrList/addrList" hover-class="navigator-hover">
+      <view class='my_list_li'>
+        <view class='my_list_lia'>
+          <view class='my_list_ab'>
+            <image src='../../images/my_address.png' class='my_list_img' background-size="cover" mode='mode="scaleToFill'></image>
+          </view>
+          <view class='my_list_ac'>
+            <text>地址管理</text>
+          </view>
+          <view class='my_list_ad'>
+            <image src='../../images/shop_xq_b.png' class='my_list_imga' background-size="cover" mode='mode="scaleToFill'></image>
           </view>
         </view>
-      </navigator>
+      </view>
+    </navigator>
+    <navigator url="../llRecord/llRecord" hover-class="navigator-hover">
+      <view class='my_list_li'>
+        <view class='my_list_lia'>
+          <view class='my_list_ab'>
+            <image src='../../images/my_exchange.png' class='my_list_img' background-size="cover" mode='mode="scaleToFill'></image>
+          </view>
+          <view class='my_list_ac'>
+            <text>兑换记录</text>
+          </view>
+          <view class='my_list_ad'>
+            <image src='../../images/shop_xq_b.png' class='my_list_imga' background-size="cover" mode='mode="scaleToFill'></image>
+          </view>
+        </view>
+      </view>
+    </navigator>
   </view>
+
+
 
 </view>

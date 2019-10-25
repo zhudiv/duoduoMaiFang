@@ -93,6 +93,9 @@ image {
 .radius {
 	border-radius: 6rpx;
 }
+.radius10 {
+	border-radius: 20rpx;
+}
 
 /* ==================
           图片
@@ -3224,6 +3227,10 @@ scroll-view.cu-steps .cu-item {
 	padding-top: 50rpx;
 }
 
+.padding-top-xxl {
+	padding-top: 60rpx;
+}
+
 .padding-right-xs {
 	padding-right: 10rpx;
 }
@@ -3491,6 +3498,13 @@ scroll-view.cu-steps .cu-item {
 .bg-grey {
 	background-color: var(--grey);
 	color: var(--white);
+}
+.zd-bg-grey {
+	background-color: #F6F6F6;
+}
+.zd-bg-gray{
+  background-color: #EDEDED;
+  color: #999999
 }
 
 .bg-gray {

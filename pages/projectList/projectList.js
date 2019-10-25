@@ -21,41 +21,105 @@ Page({
 			{
 				index: 0,
 				src:'https://www.vvwed.com/static/images/b-goodList/111.png',
-				msg: 'this is a template',
-				time: '2016-09-15'
+				name: '宁波湾·星钻',
+				tag1:'零首付',
+				tag2: '送邻里币',
+				tag3: '家电礼大包',
+				price:'10000~20000'
 			},
 			{
-				index: 0,
+				index: 1,
 				src: 'https://www.vvwed.com/static/images/b-goodList/222.png',
-				msg: 'this is a template',
-				time: '2016-09-15'
+				name: '美的·鼓楼前',
+				tag2: '送邻里币',
+				tag3: '家电礼大包',
+				price: '10000~40000'
 			},
 			{
-				index: 0,
+				index: 2,
 				src: 'https://www.vvwed.com/static/images/b-goodList/333.png',
-				msg: 'this is a template',
-				time: '2016-09-15'
+				name: '宝丰名苑',
+				tag1: '零首付',
+				tag2: '',
+				tag3: '家电礼大包',
+				price: '30000~20000'
 			},
 			{
-				index: 0,
+				index: 3,
 				src: 'https://www.vvwed.com/static/images/b-goodList/444.png',
-				msg: 'this is a template',
-				time: '2016-09-15'
+				name: '蓝光·雍舜府',
+				tag1: '零首付',
+				tag2: '送邻里币',
+				tag3: '家电礼大包',
+				price: '10000~20000'
 			},
 			{
-				index: 0,
+				index: 4,
 				src: 'https://www.vvwed.com/static/images/b-goodList/555.png',
-				msg: 'this is a template',
-				time: '2016-09-15'
+				name: '碧桂园都荟名邸',
+				tag1: '零首付',
+				tag2: '送邻里币',
+				tag3: '家电礼大包',
+				price: '10000~20000'
 			}
-		]
+		],
+		houseLists: [
+			{
+				index: 0,
+				src: 'https://www.vvwed.com/static/images/b-goodList/111.png',
+				name: 'aaaaa',
+				tag1: '零首付',
+				tag2: '送邻里币',
+				tag3: '家电礼大包',
+				price: '1000~20000'
+			},
+			{
+				index: 1,
+				src: 'https://www.vvwed.com/static/images/b-goodList/222.png',
+				name: 'bbbbb',
+				tag2: '送邻里币',
+				tag3: '家电礼大包',
+				price: '10000~40000'
+			},
+			{
+				index: 2,
+				src: 'https://www.vvwed.com/static/images/b-goodList/333.png',
+				name: 'cccc',
+				tag1: '零首付',
+				tag2: '',
+				tag3: '家电礼大包',
+				price: '30000~20000'
+			},
+			{
+				index: 3,
+				src: 'https://www.vvwed.com/static/images/b-goodList/444.png',
+				name: '蓝光·雍舜府',
+				tag1: '零首付',
+				tag2: '送邻里币',
+				tag3: '家电礼大包',
+				price: '10000~20000'
+			},
+			{
+				index: 4,
+				src: 'https://www.vvwed.com/static/images/b-goodList/555.png',
+				name: '碧桂园都荟名邸',
+				tag1: '零首付',
+				tag2: '送邻里币',
+				tag3: '家电礼大包',
+				price: '10000~20000'
+			}
+		],
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+    var that = this;
+    that.setData({
+      TabCur: options.currentNavbar,
+      scrollLeft: (options.currentNavbar - 1) * 60
+    })
 	},
 
 	/**
@@ -122,5 +186,11 @@ Page({
 			TabCur: e.currentTarget.dataset.id,
 			scrollLeft: (e.currentTarget.dataset.id - 1) * 60
 		})
-	}
+	},
+  goGiftDetail:function(e){
+    
+    wx.navigateTo({
+      url: '../projectDetail/projectDetail',
+    })
+  }
 })

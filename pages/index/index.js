@@ -285,6 +285,17 @@ Page({
     })
   },
 
+  goDetail:function(e){
+    var that = this;
+    that.setData({
+      currentNavbar: e.currentTarget.dataset.idy
+    })
+    
+    wx.navigateTo({
+      url: '../projectList/projectList?currentNavbar=' + that.data.currentNavbar,
+    })
+  },
+
   /**
    * 下拉刷新
    */

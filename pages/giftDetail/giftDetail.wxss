@@ -1,0 +1,31 @@
+/* pages/giftDetail/giftDetail.wxss */
+
+page{
+	background-color:#F6F6F6;
+}
+.imageView{
+	width: 240rpx;
+	height: 160rpx;
+}
+
+.z-icon{
+	padding: 0 !important;
+}
+
+.zd-text-red{
+  color: #F55656;
+  font-size: 36rpx;
+  font-weight: Light;
+}
+
+.zd-text-black{
+  color: #333333;
+  font-size: 30rpx;
+  font-weight: Bold;
+}
+
+.zd-text-grey{
+  color: #999999;
+  font-size: 22rpx;
+  font-weight: Regular;
+}

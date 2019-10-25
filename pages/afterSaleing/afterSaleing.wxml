@@ -1,0 +1,51 @@
+<!--pages/afterSale/afterSale.wxml-->
+<view class="container">
+  
+<view class="bg-white padding-left">
+  <view>售后申请中</view>
+  <view>2019-9-18 12：00：00</view>
+</view>
+
+
+<view class="margin-top">
+ <view class="cu-form-group">
+		<view class="title">普通选择</view>
+		<picker bindchange="PickerChange" value="{{index1}}" range="{{picker1}}">
+			<view class="picker">
+				{{index1?picker1[index1]:'退款/换货'}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">请选择原因</view>
+		<picker bindchange="PickerChange" value="{{index2}}" range="{{picker2}}">
+			<view class="picker">
+				{{index1?picker2[index2]:'退款/换货'}}
+			</view>
+		</picker>
+	</view>
+</view>
+
+  <view class="bg-white margin-top ">
+    <view class=" cf padding-sm">
+      <view class="radius fl padding-sm">
+        <view style="display:inline-block;">
+          <image src="https://www.vvwed.com/static/images/evaluate/1.png" style="width:120rpx;height:120rpx;vertical-align: middle;">
+          </image>
+        </view>
+
+        <view style="margin-left:40rpx;vertical-align: middle;display:inline-block;">
+          <view style="font-size:14px;font-weight:Regular">
+            沃隆坚果750g/盒
+          </view>
+          <view style="font-size:13px;font-weight:Regular;color:#999999">
+            商品数量：x1
+          </view>
+        </view>
+      </view>
+      <view class=" fr " style="display:inline-block;padding-top:80rpx; color:red;font-size:14px;font-weight:Regular;">￥110</view>
+    </view>
+  </view>    
+  
+
+</view>

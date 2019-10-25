@@ -99,5 +99,11 @@ Page({
         url: "/pages/my/login/login"
       });
     }
+  },
+
+  goLlRecord:function(e){
+    wx.navigateTo({
+      url: "/pages/llRecord/llRecord"
+    });
   }
 })

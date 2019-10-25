@@ -1,0 +1,83 @@
+<!--pages/afterSale/afterSale.wxml-->
+<view class="container">
+  <view class="bg-white margin-top ">
+    <view class=" cf padding-sm">
+      <view class="radius fl padding-sm">
+        <view style="display:inline-block;">
+          <image src="https://www.vvwed.com/static/images/evaluate/1.png" style="width:120rpx;height:120rpx;vertical-align: middle;">
+          </image>
+        </view>
+
+        <view style="margin-left:40rpx;vertical-align: middle;display:inline-block;">
+          <view style="font-size:14px;font-weight:Regular">
+            沃隆坚果750g/盒
+          </view>
+          <view style="font-size:13px;font-weight:Regular;color:#999999">
+            商品数量：x1
+          </view>
+        </view>
+      </view>
+      <view class=" fr " style="display:inline-block;padding-top:80rpx; color:red;font-size:14px;font-weight:Regular;">￥110</view>
+    </view>
+  </view>
+
+
+
+<view class="margin-top">
+ <view class="cu-form-group">
+		<view class="title">普通选择</view>
+		<picker bindchange="PickerChange" value="{{index1}}" range="{{picker1}}">
+			<view class="picker">
+				{{index1?picker1[index1]:'退款/换货'}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">请选择原因</view>
+		<picker bindchange="PickerChange" value="{{index2}}" range="{{picker2}}">
+			<view class="picker">
+				{{index1?picker2[index2]:'退款/换货'}}
+			</view>
+		</picker>
+	</view>
+</view>
+
+ 
+
+<view class="cu-form-group margin-top">
+		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="退款说明"></textarea>
+	</view>
+
+
+
+<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			上传凭证
+		</view>
+		<view class="action">
+			{{imgList.length}}/4
+		</view>
+	</view>
+  <view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+
+
+  
+  <view class="padding flex flex-direction">
+<button class="cu-btn lg" style="background-color:#294D7D;color:white;border-radius:50rpx;">确定申请</button>
+</view>
+      
+  
+
+</view>

@@ -13,7 +13,7 @@
 			</view>
       <view class="flex-twice bg-white radius">
 				<view>
-					<text class="text-black text-bold padding-xs" >宁波湾·星钻</text>
+					<text class="text-black text-bold padding-xs" >{{name}}</text>
 				</view>
 				
 				<!-- <view>
@@ -25,12 +25,12 @@
 				</view> -->
 
 				<view class="flex padding-xs justify-start">
-						<view class="cu-tag bg-cyan light  z-icon">零首付</view>
-						<view class="cu-tag bg-orange light  z-icon">送邻里币</view>
-    				<view class="cu-tag bg-pink light  z-icon">家电大礼包</view>
+						<view wx:if="{{tag1}}" class="cu-tag bg-cyan light  z-icon">{{tag1}}</view>
+						<view wx:if="{{tag2}}" class="cu-tag bg-orange light  z-icon">{{tag2}}</view>
+    				<view wx:if="{{tag3}}" class="cu-tag bg-pink light  z-icon">{{tag3}}</view>
 				</view>
 				<view>
-					<text class="text-price text-red padding-xs">10000~20000</text>
+					<text class="text-price text-red padding-xs">{{price}}</text>
 				</view>
 			</view>
     </view>

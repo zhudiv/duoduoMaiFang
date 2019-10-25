@@ -32,8 +32,13 @@
 				</view>
 			</view>
 		</scroll-view>
-    <view >
-      <view wx:for="{{lists}}" wx:for-item="mov" class="bg-white padding radius text-left shadow-blur">
+    <view wx:if="{{TabCur==0}}">
+      <view wx:for="{{lists}}" wx:for-item="mov" class="bg-white padding radius text-left shadow-blur" bindtap="goGiftDetail">
+				<template  is="listView" data="{{...mov}}"></template>
+			</view>
+    </view>
+		<view wx:if="{{TabCur==1}}">
+      <view wx:for="{{houseLists}}" wx:for-item="mov" class="bg-white padding radius text-left shadow-blur" bindtap="goGiftDetail">
 				<template  is="listView" data="{{...mov}}"></template>
 			</view>
     </view>
