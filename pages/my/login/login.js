@@ -30,9 +30,45 @@ Page({
       app.globalData.hasLogin = true;
       app.globalData.userInfo = e.detail.userInfo;
 
-      wx.navigateBack({
-        delta: 1
-      });
+      wx.request({
+        url: 'http://127.0.0.1:8080/a/api/user/loginByOpenId',
+        data: {
+          flag: 'C',
+          rawData: e.detail.rawData,
+          code: wx.getStorageSync('code')
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // POST请求
+        },
+        success(res) {
+          console.log(res);
+          if (res.data.errCode === '0') {
+            wx.setStorageSync('openid', that.data.openid);
+            wx.redirectTo({
+              url: '/pages/index/index'
+            })
+          } else {
+            wx.showToast({
+              title: res.data.errMsg,
+              image: '/images/icon_error.png'
+            })
+
+          }
+        },
+        fail() {
+          util.showErrorToast('服务器异常');
+
+          // wx.showToast({
+          //   title: "服务器异常,稍后再登入",
+          //   image: '/images/icon_error.png'
+          // })
+        }
+      })
+
+      // wx.navigateBack({
+      //   delta: 1
+      // });
     }
   },
 
