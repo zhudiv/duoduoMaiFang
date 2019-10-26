@@ -2,17 +2,21 @@
 <view class="container">
 
   <view class="container_head margin bg-white radius10">
-    <view class="profile-info " bindtap="goLogin">
+    <view class="profile-info ">
       <view>
-        <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+        <!-- <image class="avatar" src="{{userInfo.avatarUrl}}"></image> -->
+        <open-data class="avatar" type="userAvatarUrl"></open-data>
       </view>
-      <view wx:if="{{hasLogin}}" class="profile-info-text">欢迎您！{{userInfo.nickName}}</view>
-      <view wx:else class="profile-info-text">请登入</view>
+      <!-- <view wx:if="{{hasLogin}}" class="profile-info-text">欢迎您！{{userInfo.nickName}}</view> -->
+      <view wx:if="{{hasLogin == 2}}" class="profile-info-text">欢迎您！<open-data type="userNickName" style="display:inline-block;"></open-data></view>
+      <!-- <view wx:if="{{hasLogin}}" class="profile-info-text">请登入</view> -->
+ <button wx:if="{{hasLogin == 0}}" type="primary" open-type="getUserInfo" class="wx-login-btn" bindgetuserinfo="bindgetuserinfo">快速登入</button>
+			<button wx:if="{{hasLogin == 1}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权手机号</button>
 
       
-      <view style="display:inline-block;position:absolute;" bindtap="goLlRecord"> 
+      <!-- <view style="display:inline-block;position:absolute;" bindtap="goLlRecord"> 
         邻里币
-      </view>
+      </view> -->
     </view>
 
 
