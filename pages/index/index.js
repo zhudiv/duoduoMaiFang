@@ -291,6 +291,7 @@ Page({
       currentNavbar: e.currentTarget.dataset.idy
     })
     
+    console.log(that.data.currentNavbar);
     wx.navigateTo({
       url: '../projectList/projectList?currentNavbar=' + that.data.currentNavbar,
     })

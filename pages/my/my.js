@@ -131,21 +131,30 @@ Page({
           'content-type': 'application/x-www-form-urlencoded' // POST请求
         },
         success(res) {
+          console.log(res);
           if (res.data.errCode === '0') {
-            wx.setStorageSync('openid', that.data.openid);
+            wx.setStorageSync('openid', res.data.openid);
             // wx.redirectTo({
             //   url: '/pages/index/index'
             // })
-            if(res.data.mobileFlag === 1){ //绑定
+            if(res.data.mobileFlag === '1'){ //绑定
               that.setData({
                 hasLogin: 2
               })
 
-            } else if (res.data.mobileFlag === 2) { //未绑定
+            } else if (res.data.mobileFlag === '2') { //未绑定
               that.setData({
                 hasLogin: 1
               })
             }
+
+            //登录
+            wx.login({
+              success: res => {
+                // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                wx.setStorageSync('code', res.code);
+              }
+            })
           } else {
             console.log('222');
             
@@ -166,6 +175,8 @@ Page({
           // })
         }
       })
+
+       
     }
   },
 
@@ -174,12 +185,14 @@ Page({
     console.log(e.detail.errMsg);
     console.log(e.detail.iv);
     console.log(e.detail.encryptedData);
+    
     wx.request({
       // url: 'http://www.vvwed.com/test.php',
-      url: api.loginByOpenId,
+      url: api.getPhoneNumber,
       data: {
         flag:'C',
         code: wx.getStorageSync('code'),
+        // openId: wx.getStorageSync('openid'),
         encrypted: e.detail.encryptedData,
         iv: e.detail.iv
       },
@@ -194,11 +207,11 @@ Page({
           })
         } else {
           console.log('222');
-          
-          wx.showToast({
-            title: res.data.errMsg,
-            image: '/images/icon_error.png'
-          })
+          console.log(res);
+          // wx.showToast({
+          //   title: res.data.errMsg,
+          //   image: '/images/icon_error.png'
+          // })
 
         }
       },
