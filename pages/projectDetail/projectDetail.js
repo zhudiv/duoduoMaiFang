@@ -70,12 +70,23 @@ Page({
       imaggeDetailList: that.data.giftLists[0].images
     })
 
-    api.post('user/test', {
+    api.post('llBuildingProject/form', {
       flag: 'C',
+      id:'111'
     }).then(
-      that.setData({
-      giftLists:res.data.XXX
-      })
+      res => {
+        console.log('-------------llBuildingProject/form-----------------');
+        console.log(res);
+        api.post('llBuildingProject/data',{
+          flag:'C',
+        }).then(
+          res => {
+            console.log('-------------llBuildingProject/data-----------------');
+            console.log(res);
+          }
+        )
+      }
+      
     ).catch();
   },
 
