@@ -70,14 +70,13 @@ Page({
       imaggeDetailList: that.data.giftLists[0].images
     })
 
-    api.post('llBuildingProject/form', {
+    api.get('llBuildingProject/form', {
       flag: 'C',
-      id:'111'
+      id:'5b3b98a5eb554cecb3d0b3c3d87a36bc'
     }).then(
       res => {
-        console.log('-------------llBuildingProject/form-----------------');
         console.log(res);
-        api.post('llBuildingProject/data',{
+        api.get('llBuildingProject/data',{
           flag:'C',
         }).then(
           res => {
