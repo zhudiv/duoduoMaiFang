@@ -1,4 +1,5 @@
 // pages/projectList/projectList.js
+const api = require('../../configs/api.js');
 Page({
 
 	/**
@@ -115,11 +116,27 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+    console.log('---------------------------onload----')
     var that = this;
     that.setData({
       TabCur: options.currentNavbar,
       scrollLeft: (options.currentNavbar - 1) * 60
     })
+
+    api.get('llBuildingProject/data', {
+      flag: 'C',
+    }).then(
+      xxx => {
+        console.log(xxx);
+        that.setData({
+          lists: xxx
+        })
+      }
+      
+    ).catch();
+
+    console.log('-----------');
+    console.log(that.data.lists);
 	},
 
 	/**
@@ -133,7 +150,8 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+    console.log('---------------------------onshow----')
+    console.log(this.data.lists);
 	},
 
 	/**

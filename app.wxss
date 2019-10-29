@@ -11,6 +11,7 @@
 @import "lib/weui.wxss";
 @import "colorui/main.wxss";
 @import "colorui/icon.wxss";
+@import "component/appToast/appToast.wxss";
 
 
 .container {

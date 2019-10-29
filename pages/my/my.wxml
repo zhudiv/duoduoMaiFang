@@ -1,4 +1,6 @@
 <!--pages/my/my.wxml-->
+<import src="../../component/appToast/appToast.wxml"/>
+<template is="toast" data="{{..._toast_ }}"></template>
 <view class="container">
 
   <view class="container_head margin bg-white radius10">

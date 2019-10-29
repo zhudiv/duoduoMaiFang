@@ -1,5 +1,8 @@
 //app.js
+import { ToastPannel } from './component/appToast/appToast'
+
 App({
+  ToastPannel,
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -7,15 +10,35 @@ App({
     wx.setStorageSync('logs', logs)
 
     // 登录
-    wx.login({
+    // wx.login({
+      
+    //   success: res => {
+    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    //     console.log(res);
+    //     wx.setStorageSync('code', res.code);
+    //   }
+    // })
+    wx.checkSession({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        wx.setStorageSync('code', res.code);
+        console.log('session没失效')
+        console.log(res);
+      },
+      fail: res => {
+        console.log('session失效')
+        wx.login({
+
+          success: res => {
+            // 发送 res.code 到后台换取 openId, sessionKey, unionId
+            console.log(res);
+            wx.setStorageSync('code', res.code);
+          }
+        })
       }
     })
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        console.log('getsetting success')
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
@@ -31,6 +54,12 @@ App({
             }
           })
         }
+      },
+      fail: res => {
+        console.log('getting fail')
+      },
+      complete: res => {
+        console.log('getsetting complete')
       }
     })
   },
@@ -39,6 +68,6 @@ App({
       avatarUrl: '/images/dengru.png',
       nickName: '请登入'
     },
-    hasLogin:false
+    hasLogin:0
   }
 })

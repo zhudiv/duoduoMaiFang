@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<button bindtap="testtest">test</button>
 <view class="index">
 
   <view class="search">

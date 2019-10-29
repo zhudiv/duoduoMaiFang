@@ -302,5 +302,9 @@ Page({
    */
   onPullDownRefresh:function(){
     console.log(111);
+  },
+
+  testtest:function(e){
+    
   }
 })

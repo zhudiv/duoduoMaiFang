@@ -1,4 +1,5 @@
 // pages/projectDetail/projectDetail.js
+const api = require('../../configs/api.js');
 Page({
 
   /**
@@ -68,6 +69,14 @@ Page({
     that.setData({
       imaggeDetailList: that.data.giftLists[0].images
     })
+
+    api.post('user/test', {
+      flag: 'C',
+    }).then(
+      that.setData({
+      giftLists:res.data.XXX
+      })
+    ).catch();
   },
 
   /**

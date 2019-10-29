@@ -10,7 +10,7 @@ Page({
    */
   data: {
     userInfo: app.globalData.userInfo,
-    hasLogin: 0 //判断是否登入
+    hasLogin: wx.getStorageSync('hasLogin') //判断是否登入
   },
 
   /**
@@ -28,12 +28,10 @@ Page({
     //   that.setData({
     //     userInfo:app.globalData.userInfo
     //   })
-      
+
     // }
-    console.log('111');
-    wx.request({
-      url: '',
-    })
+
+    new app.ToastPannel();
   },
 
   /**
@@ -49,18 +47,13 @@ Page({
   onShow: function () {
     var that = this;
     //获取用户的登入信息
-    if (app.globalData.hasLogin){
-      // let userInfo = wx.getStorageSync('userInfo');
-      // that.setData({
-      //   userInfo:userInfo,
-      //   hasLogin:true
-      // })
-      let userInfo = app.globalData.userInfo;
-      that.setData({
-        userInfo: app.globalData.userInfo,
-        hasLogin: app.globalData.hasLogin
-      })
-    }
+    // if (app.globalData.hasLogin) {
+    //   let userInfo = app.globalData.userInfo;
+    //   that.setData({
+    //     userInfo: app.globalData.userInfo,
+    //     hasLogin: app.globalData.hasLogin
+    //   })
+    // }
   },
 
   /**
@@ -98,7 +91,7 @@ Page({
 
   },
 
-  goLogin:function(){
+  goLogin: function () {
     var that = this;
     if (!that.data.hasLogin) {
       wx.navigateTo({
@@ -107,7 +100,7 @@ Page({
     }
   },
 
-  goLlRecord:function(e){
+  goLlRecord: function (e) {
     wx.navigateTo({
       url: "/pages/llRecord/llRecord"
     });
@@ -115,119 +108,222 @@ Page({
 
   bindgetuserinfo: function (e) {
     var that = this;
-    console.log(e);
-    if (e.detail.userInfo) {
-      app.globalData.hasLogin = true;
-      app.globalData.userInfo = e.detail.userInfo;
-      wx.request({
-        url: api.getDetail,
-        data: {
-          flag: 'C',
-          rawData: e.detail.rawData,
-          code: wx.getStorageSync('code')
-        },
-        method: 'POST',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded' // POST请求
-        },
-        success(res) {
-          console.log(res);
-          if (res.data.errCode === '0') {
-            wx.setStorageSync('openid', res.data.openid);
-            // wx.redirectTo({
-            //   url: '/pages/index/index'
-            // })
-            if(res.data.mobileFlag === '1'){ //绑定
-              that.setData({
-                hasLogin: 2
-              })
-
-            } else if (res.data.mobileFlag === '2') { //未绑定
-              that.setData({
-                hasLogin: 1
-              })
-            }
-
-            //登录
-            wx.login({
-              success: res => {
-                // 发送 res.code 到后台换取 openId, sessionKey, unionId
-                wx.setStorageSync('code', res.code);
-              }
-            })
-          } else {
-            console.log('222');
-            
-            wx.showToast({
-              title: res.data.errMsg,
-              image: '/images/icon_error.png'
-            })
-
-          }
-        },
-        fail() {
-          console.log('222');
-          util.showErrorToast('服务器异常');
-
-          // wx.showToast({
-          //   title: "服务器异常,稍后再登入",
-          //   image: '/images/icon_error.png'
-          // })
-        }
+    api.post('getDetail', {
+      flag: 'C',
+      rawData: e.detail.rawData,
+      code: wx.getStorageSync('code')
+    }).then(res => {
+      console.log(res)
+      if (res.mobileFlag === '1') { //绑定
+      that.setData({
+        hasLogin:1
       })
+        wx.setStorageSync('hasLogin', 1);
+        wx.setStorageSync('openid', res.openid);
+      } else if (res.mobileFlag === '2') { //未绑定
+        that.setData({
+          hasLogin: 1
+        })
+        wx.setStorageSync('hasLogin', 1);
+        wx.login({
 
-       
-    }
+          success: res => {
+            // 发送 res.code 到后台换取 openId, sessionKey, unionId
+            console.log(res);
+            wx.setStorageSync('code', res.code);
+          }
+        })
+      }
+    }).catch(e => {
+      console.log(e);
+      that.zdshowToast(e, 2500);
+    })
   },
 
   getPhoneNumber: function (e) {
     var that = this;
-    console.log(e.detail.errMsg);
-    console.log(e.detail.iv);
-    console.log(e.detail.encryptedData);
-    
-    wx.request({
-      // url: 'http://www.vvwed.com/test.php',
-      url: api.getPhoneNumber,
-      data: {
-        flag:'C',
+ 
+
+    api.post('getPhoneNumber',
+      {
+        flag: 'C',
         code: wx.getStorageSync('code'),
-        // openId: wx.getStorageSync('openid'),
         encrypted: e.detail.encryptedData,
         iv: e.detail.iv
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // POST请求
-      },
-      success(res) {
-        if (res.data.errCode === '0') {
-          that.setData({
-            hasLogin: 2
-          })
-        } else {
-          console.log('222');
-          console.log(res);
-          // wx.showToast({
-          //   title: res.data.errMsg,
-          //   image: '/images/icon_error.png'
-          // })
+      }).then(res => {
+        wx.setStorageSync('hasLogin', 2)
+      }).catch(e => {
+        that.zdshowToast(e, 2500);
+        setTimeout(function () { wx.redirectTo({ url: '../index/index', }) }, 2500)
+      })
+  },
+    
+  
+  //   wx.request({
+  //     // url: 'http://www.vvwed.com/test.php',
+  //     url: api.getPhoneNumber,
+  //     data: {
+  //       flag: 'C',
+  //       code: wx.getStorageSync('code'),
+  //       // openId: wx.getStorageSync('openid'),
+  //       encrypted: e.detail.encryptedData,
+  //       iv: e.detail.iv
+  //     },
+  //     method: 'POST',
+  //     header: {
+  //       'content-type': 'application/x-www-form-urlencoded' // POST请求
+  //     },
+  //     success(res) {
+  //       if (res.data.errCode === '0') {
+  //         that.setData({
+  //           hasLogin: 2
+  //         })
+  //       } else {
+  //         console.log('222');
+  //         console.log(res);
+  //         // wx.showToast({
+  //         //   title: res.data.errMsg,
+  //         //   image: '/images/icon_error.png'
+  //         // })
 
-        }
-      },
-      fail() {
-        // util.showErrorToast('服务器异常');
-        // wx.redirectTo({
-        //   url: '/pages/index/index',
-        // })
-        wx.showToast({
-          title: "服务器异常",
-          image: '/images/icon_error.png',
-          duration: 2000,
-        })
-        setTimeout(function () { wx.redirectTo({ url: '../index/index', }) }, 2000)
-      }
-    })
+  //       }
+  //     },
+  //     fail() {
+  //       // util.showErrorToast('服务器异常');
+  //       // wx.redirectTo({
+  //       //   url: '/pages/index/index',
+  //       // })
+  //       wx.showToast({
+  //         title: "服务器异常",
+  //         image: '/images/icon_error.png',
+  //         duration: 2000,
+  //       })
+  //       setTimeout(function () { wx.redirectTo({ url: '../index/index', }) }, 2000)
+  //     }
+  //   })
 
+  // },
+  // bindgetuserinfo: function (e) {
+  //   var that = this;
+  //   console.log(e);
+  //   if (e.detail.userInfo) {
+  //     app.globalData.hasLogin = true;
+  //     app.globalData.userInfo = e.detail.userInfo;
+  //     wx.request({
+  //       url: api.getDetail,
+  //       data: {
+  //         flag: 'C',
+  //         rawData: e.detail.rawData,
+  //         code: wx.getStorageSync('code')
+  //       },
+  //       method: 'POST',
+  //       header: {
+  //         'content-type': 'application/x-www-form-urlencoded' // POST请求
+  //       },
+  //       success(res) {
+  //         console.log(res);
+  //         if (res.data.errCode === '0') {
+  //           wx.setStorageSync('openid', res.data.openid);
+  //           // wx.redirectTo({
+  //           //   url: '/pages/index/index'
+  //           // })
+  //           if (res.data.mobileFlag === '1') { //绑定
+  //             that.setData({
+  //               hasLogin: 2
+  //             })
+
+  //           } else if (res.data.mobileFlag === '2') { //未绑定
+  //             that.setData({
+  //               hasLogin: 1
+  //             })
+  //           }
+
+  //           //登录
+  //           wx.login({
+  //             success: res => {
+  //               // 发送 res.code 到后台换取 openId, sessionKey, unionId
+  //               wx.setStorageSync('code', res.code);
+  //             }
+  //           })
+  //         } else {
+  //           console.log('222');
+
+  //           wx.showToast({
+  //             title: res.data.errMsg,
+  //             image: '/images/icon_error.png'
+  //           })
+
+  //         }
+  //       },
+  //       fail() {
+  //         console.log('222');
+  //         util.showErrorToast('服务器异常');
+
+  //         // wx.showToast({
+  //         //   title: "服务器异常,稍后再登入",
+  //         //   image: '/images/icon_error.png'
+  //         // })
+  //       }
+  //     })
+
+
+  //   }
+  // },
+
+  // getPhoneNumber: function (e) {
+  //   var that = this;
+  //   console.log(e.detail.errMsg);
+  //   console.log(e.detail.iv);
+  //   console.log(e.detail.encryptedData);
+
+  //   wx.request({
+  //     // url: 'http://www.vvwed.com/test.php',
+  //     url: api.getPhoneNumber,
+  //     data: {
+  //       flag: 'C',
+  //       code: wx.getStorageSync('code'),
+  //       // openId: wx.getStorageSync('openid'),
+  //       encrypted: e.detail.encryptedData,
+  //       iv: e.detail.iv
+  //     },
+  //     method: 'POST',
+  //     header: {
+  //       'content-type': 'application/x-www-form-urlencoded' // POST请求
+  //     },
+  //     success(res) {
+  //       if (res.data.errCode === '0') {
+  //         that.setData({
+  //           hasLogin: 2
+  //         })
+  //       } else {
+  //         console.log('222');
+  //         console.log(res);
+  //         // wx.showToast({
+  //         //   title: res.data.errMsg,
+  //         //   image: '/images/icon_error.png'
+  //         // })
+
+  //       }
+  //     },
+  //     fail() {
+  //       // util.showErrorToast('服务器异常');
+  //       // wx.redirectTo({
+  //       //   url: '/pages/index/index',
+  //       // })
+  //       wx.showToast({
+  //         title: "服务器异常",
+  //         image: '/images/icon_error.png',
+  //         duration: 2000,
+  //       })
+  //       setTimeout(function () { wx.redirectTo({ url: '../index/index', }) }, 2000)
+  //     }
+  //   })
+
+  // },
+
+  //提示框
+  showAlter: function (e) {
+    var that = this;
+    that.show(e);
   }
 })
