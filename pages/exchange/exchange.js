@@ -1,6 +1,7 @@
 const app = getApp();
 const api = require('../../configs/api.js');
 
+
 Page({
   data: {
     region: ['浙江省', '宁波市', '鄞州区'],
