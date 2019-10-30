@@ -33,7 +33,7 @@
 			</view>
 		</scroll-view>
     <view wx:if="{{TabCur==0}}">
-      <view wx:for="{{lists}}" wx:for-item="mov" class="bg-white padding radius text-left shadow-blur" bindtap="goGiftDetail">
+      <view wx:for="{{lists}}" wx:for-item="mov" class="bg-white padding radius text-left shadow-blur" data-id="{{mov.index}}" bindtap="goGiftDetail">
 				<template  is="listView" data="{{...mov}}"></template>
 			</view>
     </view>

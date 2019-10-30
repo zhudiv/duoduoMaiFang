@@ -6,7 +6,7 @@ function post(url, data){
   var promise = new Promise((resolve, reject) => {
     var that = this;
     var postData = data;
-
+//test
     wx.checkSession({
       success: res => {
         console.log('没过期');
