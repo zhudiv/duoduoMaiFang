@@ -10,21 +10,23 @@ Page({
     TabCur: 0,
     scrollLeft: 0,
     giftTabCur: 0,
+    allInfo:'',
     imageDetailList:[],
     tabs: ['地下一层', '地下二层', '储物间'],
-    imageLists: [
-    {
-      name:'地下一层',
-      src:'https://www.vvwed.com/static/images/detailList/lunbo1.png'
-    },
-    {
-      name: '地下二层',
-      src: 'https://www.vvwed.com/static/images/detailList/lunbo2.jpg'
-    },
-    {
-      name: '储物间',
-      src: 'https://www.vvwed.com/static/images/detailList/lunbo3.jpg'
-    }],
+    imageLists:[],
+    // imageLists: [
+    // {
+    //   name:'地下一层',
+    //   src:'https://www.vvwed.com/static/images/detailList/lunbo1.png'
+    // },
+    // {
+    //   name: '地下二层',
+    //   src: 'https://www.vvwed.com/static/images/detailList/lunbo2.jpg'
+    // },
+    // {
+    //   name: '储物间',
+    //   src: 'https://www.vvwed.com/static/images/detailList/lunbo3.jpg'
+    // }],
     // giftsList:[
     //   {
     //     id: '',
@@ -56,6 +58,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('1111111111111111');
+    console.log(options);
     var that = this;
     that.setData({
       // imageDetailList: that.data.giftLists[0].images
@@ -63,12 +67,16 @@ Page({
 
     api.get('llBuildingProject/form', {
       flag: 'C',
-      id:'5b3b98a5eb554cecb3d0b3c3d87a36bc'
+      id: options.id
     }).then(
       res => {
         that.setData({
-          llGiftsList:res.giftsList
+          allInfo:res,
+          imageLists:res.carList,
+          llGiftsList:res.giftsList,
+          giftsLists3: res.giftsList[0].llGoodsList
         })
+        app.globalData.projectInfo = that.data.allInfo;
         // api.get('llBuildingProject/data',{
         //   flag:'C',
         // }).then(
@@ -151,24 +159,27 @@ Page({
     that.setData({
       giftTabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60,
-      imageDetailList: that.data.llGiftsList[e.currentTarget.dataset.id].id
+      // imageDetailList: that.data.llGiftsList[e.currentTarget.dataset.id].id
+      giftsLists3: that.data.llGiftsList[e.currentTarget.dataset.id].llGoodsList
     })
 
   
-    api.get('llGifts/get', {
-      flag: 'C',
-      id:e.currentTarget.dataset.imgid
-    }).then(res => {
-      console.log(res.llGoodsList);
-      that.setData({
-        giftsLists3: res.llGoodsList
-      })
-      app.globalData.gifts = that.data.giftsLists3;
-    }).catch();
+    // api.get('llGifts/get', {
+    //   flag: 'C',
+    //   id:e.currentTarget.dataset.imgid
+    // }).then(res => {
+    //   console.log(res.llGoodsList);
+    //   that.setData({
+    //     giftsLists3: res.llGoodsList
+    //   })
+    //   app.globalData.gifts = that.data.giftsLists3;
+    // }).catch();
   },
   goGiftDetail:function(e){
+    var that = this;
+    app.globalData.gifts = that.data.llGiftsList[that.data.giftTabCur].llGoodsList
     wx.navigateTo({
-      url: '../giftDetail/giftDetail',
+      url: '../giftDetail/giftDetail'
     })
   }
 })

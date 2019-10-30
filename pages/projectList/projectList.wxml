@@ -25,20 +25,20 @@
 		</i-tabs> -->
 		<scroll-view scroll-x class="bg-white nav" style="border-top-left-radius:20rpx;border-top-right-radius:20rpx;padding-bottom:20rpx;">
 			<view class="flex text-center">
-				<view class="cu-item flex-sub " wx:for="{{tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
-      		<view style="width:50%;margin:0 auto;" class="cu-item flex-sub {{index==TabCur?'text-zdy-darkblue cur':''}}">
+				<view class="cu-item flex-sub " wx:for="{{tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}" data-num="{{item.index}}">
+      		<view style="width:50%;margin:0 auto;" class="cu-item flex-sub {{item.index==TabCur?'text-zdy-darkblue cur':''}}">
 					 {{item.name}}
 					</view>
 				</view>
 			</view>
 		</scroll-view>
-    <view wx:if="{{TabCur==0}}">
-      <view wx:for="{{lists}}" wx:for-item="mov" class="bg-white padding radius text-left shadow-blur" data-id="{{mov.index}}" bindtap="goGiftDetail">
+    <view wx:if="{{TabCur==1}}">
+      <view wx:for="{{lists}}" wx:for-item="mov" class="bg-white padding radius text-left shadow-blur" data-id="{{mov.id}}" bindtap="goGiftDetail">
 				<template  is="listView" data="{{...mov}}"></template>
 			</view>
     </view>
-		<view wx:if="{{TabCur==1}}">
-      <view wx:for="{{houseLists}}" wx:for-item="mov" class="bg-white padding radius text-left shadow-blur" bindtap="goGiftDetail">
+		<view wx:if="{{TabCur==2}}">
+      <view wx:for="{{lists}}" wx:for-item="mov" class="bg-white padding radius text-left shadow-blur" data-id="{{mov.id}}" bindtap="goGiftDetail">
 				<template  is="listView" data="{{...mov}}"></template>
 			</view>
     </view>

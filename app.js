@@ -53,8 +53,9 @@ App({
     userInfo: {
       avatarUrl: '/images/dengru.png',
       nickName: '请登入',
-      gifts:''
     },
+    gifts: '',
+    projectInfo: '',
     hasLogin:0
   }
 })

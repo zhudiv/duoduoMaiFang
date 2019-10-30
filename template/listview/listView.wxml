@@ -25,12 +25,12 @@
 				</view> -->
 
 				<view class="flex padding-xs justify-start">
-						<view wx:if="{{nameBack}}" class="cu-tag bg-cyan light  z-icon">{{nameBack}}</view>
+						<!-- <view wx:if="{{nameBack}}" class="cu-tag bg-cyan light  z-icon">{{nameBack}}</view> -->
 						<view wx:if="{{tagIds}}" class="cu-tag bg-orange light  z-icon">{{tagIds}}</view>
-    				<view wx:if="{{tag3}}" class="cu-tag bg-pink light  z-icon">{{tag3}}</view>
+    				<!-- <view wx:if="{{tag3}}" class="cu-tag bg-pink light  z-icon">{{tag3}}</view> -->
 				</view>
 				<view>
-					<text class="text-price text-red padding-xs">{{houseSale}}</text>
+					<text class="text-price text-red padding-xs">{{priceInterval}}</text>
 				</view>
 			</view>
     </view>

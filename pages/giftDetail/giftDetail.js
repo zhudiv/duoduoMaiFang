@@ -65,11 +65,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    var that = this;
-    that.setData({
-      lists2: app.globalData.gifts
-    })
+  onLoad: function () {
+    // var that = this;
+    // console.log(options.giftInfo);
+    // that.setData({
+    //   lists2: options.giftInfo
+    // })
     
   },
 

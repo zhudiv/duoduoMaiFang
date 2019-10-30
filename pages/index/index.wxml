@@ -111,7 +111,7 @@
   <view class="separate"></view>
 
   <view class="flex padding justify-around bg-white">
-      <view class="zd-bg-grey padding-top padding-left margin-xs radius10" data-idy="0" bindtap="goDetail">
+      <view class="zd-bg-grey padding-top padding-left margin-xs radius10" data-idy="1" bindtap="goDetail">
         <view>
           <text class="text-lg">邻里车位</text>
         </view>
@@ -122,7 +122,7 @@
           <image src="https://www.vvwed.com/static/images/index/home_index_car.png" style="width:260rpx;height:70rpx;"></image>
         </view>
       </view>
-      <view class="zd-bg-grey padding-top padding-left margin-xs radius10" data-idy="1" bindtap="goDetail">
+      <view class="zd-bg-grey padding-top padding-left margin-xs radius10" data-idy="2" bindtap="goDetail">
         <view>
           <text class="text-lg">邻里住宅</text>
         </view>

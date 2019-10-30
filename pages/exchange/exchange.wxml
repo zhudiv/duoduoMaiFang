@@ -1,7 +1,10 @@
-<form>
+<import src="../../component/appToast/appToast.wxml"/>
+<template is="toast" data="{{..._toast_ }}"></template>
+
+<form bindsubmit="getInfo">
 	<view class="cu-form-group margin-top">
 		<view class="title">项目名</view>
-		<view class="title" style="flex:1">宁波湾·星钻</view>
+		<view class="title" style="flex:1">{{projectName}}</view>
 	</view>
 
 
@@ -15,15 +18,23 @@
 	</view>
   <view class="cu-form-group">
 		<view class="title">收货地址</view>
-		<input placeholder="请输入您购买的项目具体位置（如车位号）"></input>
+		<input placeholder="请输入您的具体位置" name="address"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">车位号</view>
+		<input placeholder="(请输入车位）" name="num"></input>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">身份证号</view>
+		<input placeholder="请输入您的身份证" name="idCard"></input>
 	</view>
   <view class="cu-form-group">
 		<view class="title">客户姓名</view>
-		<input placeholder="请输入您的姓名"></input>
+		<input placeholder="请输入您的姓名" name="khname"></input>
 	</view>
   <view class="cu-form-group">
 		<view class="title">手机号码</view>
-		<input placeholder="输入框带标签"></input>
+		<input placeholder="输入框带标签" name="phone"></input>
 		<view class="cu-capsule radius">
 			<view class="cu-tag bg-blue">
 				+86
@@ -38,6 +49,8 @@
 		<input placeholder="输入框带个按钮"></input>
 		<button class="cu-btn bg-green shadow">验证码</button>
 	</view>
+
+  <button style="margin-top:60rpx;width:90%;background-color:#294D7D;color:white;z-index:10;border-radius:50rpx;"  formType="submit">确定申请</button>
 </form>
 
-<button style="margin-top:60rpx;width:90%;background-color:#294D7D;color:white;z-index:10;border-radius:50rpx;" bindtap="goExchange" >确定申请</button>
+
