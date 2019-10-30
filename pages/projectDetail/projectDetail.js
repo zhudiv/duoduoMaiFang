@@ -1,5 +1,6 @@
 // pages/projectDetail/projectDetail.js
 const api = require('../../configs/api.js');
+const app = getApp();
 Page({
 
   /**
@@ -24,9 +25,13 @@ Page({
       name: '储物间',
       src: 'https://www.vvwed.com/static/images/detailList/lunbo3.jpg'
     }],
+
+    giftLists2:[],
+    giftLists3:[],
     giftLists:[
       {
         name:'礼品一',
+        id:'11111',
         images:[
           'https://www.vvwed.com/static/images/detailList/lunbo1.png',
           'https://www.vvwed.com/static/images/detailList/lunbo2.jpg',
@@ -75,13 +80,31 @@ Page({
       id:'5b3b98a5eb554cecb3d0b3c3d87a36bc'
     }).then(
       res => {
+        console.log('-------------llBuildingProject/form-----------------');
         console.log(res);
+        that.setData({
+          giftLists2:res.giftsList
+        })
         api.get('llBuildingProject/data',{
           flag:'C',
         }).then(
           res => {
             console.log('-------------llBuildingProject/data-----------------');
             console.log(res);
+            api.get('llGifts/get', {
+              flag: 'C',
+              id:'83e02566e1fe45a282a102d4c2047b71'
+            }
+
+            ).then(
+              res => {
+                console.log('-------------llGifts/get-----------------');
+                console.log(res.llGoodsList);
+                // that.setData({
+                //   imaggeDetailList: res.llGoodsList
+                // })
+              }
+            )
           }
         )
       }
@@ -146,11 +169,24 @@ Page({
   },
   giftTabSelect: function (e) {
     var that = this;
+    console.log(e);
     that.setData({
       giftTabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60,
       imaggeDetailList: that.data.giftLists[e.currentTarget.dataset.id].images
     })
+
+  
+    api.get('llGifts/get', {
+      flag: 'C',
+      id:e.currentTarget.dataset.imgid
+    }).then(res => {
+      console.log(res.llGoodsList);
+      that.setData({
+        giftLists3: res.llGoodsList
+      })
+      app.globalData.gifts = that.data.giftLists3;
+    }).catch();
   },
   goGiftDetail:function(e){
     wx.navigateTo({

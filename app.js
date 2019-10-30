@@ -66,7 +66,8 @@ App({
   globalData: {
     userInfo: {
       avatarUrl: '/images/dengru.png',
-      nickName: '请登入'
+      nickName: '请登入',
+      gifts:''
     },
     hasLogin:0
   }

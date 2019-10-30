@@ -1,68 +1,76 @@
 // pages/giftDetail/giftDetail.js
+
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    lists: [
-      {
-        index: 0,
-        src: 'https://www.vvwed.com/static/images/giftList/gift1.png',
-        name: '小米全面屏电视E55A',
-        tag: '全面屏设计，人工智能语音',
-        price: '￥10000'
-      },
-      {
-        index: 1,
-        src: 'https://www.vvwed.com/static/images/giftList/gift2.png',
-        name: '米兔婴儿理发器 白色',
-        tag: '适合零经验爸妈使用',
-        price: '￥20000'
-      },
-      {
-        index: 2,
-        src: 'https://www.vvwed.com/static/images/giftList/gift3.png',
-        name: '米兔婴儿理发器 白色',
-        tag: '适合零经验爸妈使用',
-        price: '30000~20000'
-      },
-      {
-        index: 3,
-        src: 'https://www.vvwed.com/static/images/giftList/gift4.png',
-        name: '米兔婴儿理发器 白色',
-        tag: '适合零经验爸妈使用',
-        price: '10000~20000'
-      },
-      {
-        index: 4,
-        src: 'https://www.vvwed.com/static/images/giftList/gift5.png',
-        name: '米兔婴儿理发器 白色',
-        tag: '适合零经验爸妈使用',
-        price: '10000~20000'
-      },
-      {
-        index: 4,
-        src: 'https://www.vvwed.com/static/images/giftList/gift6.png',
-        name: '米兔婴儿理发器 白色',
-        tag: '适合零经验爸妈使用',
-        price: '10000~20000'
-      },
-      {
-        index: 4,
-        src: 'https://www.vvwed.com/static/images/giftList/gift7.png',
-        name: '米兔婴儿理发器 白色',
-        tag: '适合零经验爸妈使用',
-        price: '10000~20000'
-      }
-    ],
+    
+    // lists: [
+    //   {
+    //     index: 0,
+    //     src: 'https://www.vvwed.com/static/images/giftList/gift1.png',
+    //     name: '小米全面屏电视E55A',
+    //     tag: '全面屏设计，人工智能语音',
+    //     price: '￥10000'
+    //   },
+    //   {
+    //     index: 1,
+    //     src: 'https://www.vvwed.com/static/images/giftList/gift2.png',
+    //     name: '米兔婴儿理发器 白色',
+    //     tag: '适合零经验爸妈使用',
+    //     price: '￥20000'
+    //   },
+    //   {
+    //     index: 2,
+    //     src: 'https://www.vvwed.com/static/images/giftList/gift3.png',
+    //     name: '米兔婴儿理发器 白色',
+    //     tag: '适合零经验爸妈使用',
+    //     price: '30000~20000'
+    //   },
+    //   {
+    //     index: 3,
+    //     src: 'https://www.vvwed.com/static/images/giftList/gift4.png',
+    //     name: '米兔婴儿理发器 白色',
+    //     tag: '适合零经验爸妈使用',
+    //     price: '10000~20000'
+    //   },
+    //   {
+    //     index: 4,
+    //     src: 'https://www.vvwed.com/static/images/giftList/gift5.png',
+    //     name: '米兔婴儿理发器 白色',
+    //     tag: '适合零经验爸妈使用',
+    //     price: '10000~20000'
+    //   },
+    //   {
+    //     index: 4,
+    //     src: 'https://www.vvwed.com/static/images/giftList/gift6.png',
+    //     name: '米兔婴儿理发器 白色',
+    //     tag: '适合零经验爸妈使用',
+    //     price: '10000~20000'
+    //   },
+    //   {
+    //     index: 4,
+    //     src: 'https://www.vvwed.com/static/images/giftList/gift7.png',
+    //     name: '米兔婴儿理发器 白色',
+    //     tag: '适合零经验爸妈使用',
+    //     price: '10000~20000'
+    //   }
+    // ]
+    lists2: app.globalData.gifts
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.setData({
+      lists2: app.globalData.gifts
+    })
+    
   },
 
   /**
@@ -76,7 +84,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    that.setData({
+      lists2: app.globalData.gifts
+    })
   },
 
   /**

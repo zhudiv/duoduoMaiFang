@@ -28,15 +28,19 @@
   <view class="giftType" style="padding-bottom:200rpx;padding-top:18rpx;">
     <view style="font-size:14px;font-weight:Regular;">礼品类型</view>
     <view class="flex solid-bottom padding justify-start">
-      <view class="giftTypeCell zd-bg-gray margin-right-sm radius {{index==giftTabCur?'zd-text':''}}"  wx:for="{{giftLists}}" wx:key bindtap="giftTabSelect" data-id="{{index}}">{{item.name}}</view>
+      <!-- <view class="giftTypeCell zd-bg-gray margin-right-sm radius {{index==giftTabCur?'zd-text':''}}"  wx:for="{{giftLists}}" wx:key bindtap="giftTabSelect" data-id="{{index}}">{{item}}</view> -->
+      <view class="giftTypeCell zd-bg-gray margin-right-sm radius {{index==giftTabCur?'zd-text':''}}"  wx:for="{{giftLists2}}" wx:key bindtap="giftTabSelect" data-id="{{index}}" data-imgid="{{item}}">{{item}}</view>
       <!-- <view class="giftTypeCell zd-bg-gray  margin-right-sm radius">礼品二</view>
       <view class="giftTypeCell zd-bg-gray margin-right-sm radius">礼品三</view> -->
     </view>
 
     <scroll-view  scroll-x="true" style=" white-space: nowrap; display: flex"  >
     <!-- <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%"> -->
-        <view wx:for="{{imaggeDetailList}}" style="background: red; width: 100rpx; height: 100rpx; display: inline-block" >
-          <image style="width: 100rpx; height: 100rpx; mode:scaleToFill;" src="{{item}}"></image>
+        <!-- <view wx:for="{{imaggeDetailList}}" style="background: red; width: 100rpx; height: 100rpx; display: inline-block" >
+          <image style="width: 100rpx; height: 100rpx; mode:scaleToFill;" src="{{item.thumb}}"></image>
+        </view> -->
+        <view wx:for="{{giftLists3}}" style="background: red; width: 100rpx; height: 100rpx; display: inline-block" >
+          <image style="width: 100rpx; height: 100rpx; mode:scaleToFill;" src="{{item.thumb}}"></image>
         </view>
         <!-- <view style="background: green; width: 100rpx; height: 100rpx; display: inline-block"></view>
         <view style="background: blue; width: 100rpx; height: 100rpx; display: inline-block"></view>

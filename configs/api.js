@@ -56,7 +56,8 @@ function get(url, data) {
       data: postData,
 
       success: res => {
-        console.log('--------后台返回的数据-------------');
+        console.log('--------res-------------');
+        console.log(res);
         if (res.data.errCode === '0') {
           resolve(res.data.rows);
         } else if (res.data.errMsg) {

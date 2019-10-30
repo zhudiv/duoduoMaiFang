@@ -1,14 +1,14 @@
 <!--pages/giftDetail/giftDetail.wxml-->
 <view>
-<view wx:for="{{lists}}" class="padding radius text-left shadow-blur" >
+
+<view wx:for="{{lists2}}" wx:key class="padding radius text-left shadow-blur" >
 				<view class="flex  p-xs margin-bottom-sm mb-sm align-center">
-      <!-- <view class="flex-sub bg-grey padding-sm margin-xs radius"> -->
 			<view class="flex-sub radius">
-				<image class="imageView" mode="aspectFill" src="{{item.src}}"></image>
+				<image class="imageView" mode="aspectFill" src="{{item.thumb}}"></image>
 			</view>
       <view class="flex-twice padding-left-lg radius">
 				<view>
-					<text class="zd-text-red text-bold padding-xs " >{{item.price}}</text>
+					<text class="zd-text-red text-bold padding-xs " >{{item.shopPrice}}</text>
 				</view>
 				<view>
 					<text class="zd-text-black text-bold padding-xs" >{{item.name}}</text>
