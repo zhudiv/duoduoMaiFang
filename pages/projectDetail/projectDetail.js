@@ -10,12 +10,12 @@ Page({
     TabCur: 0,
     scrollLeft: 0,
     giftTabCur: 0,
-    imaggeDetailList:[],
+    imageDetailList:[],
     tabs: ['地下一层', '地下二层', '储物间'],
     imageLists: [
     {
       name:'地下一层',
-        src:'https://www.vvwed.com/static/images/detailList/lunbo1.png'
+      src:'https://www.vvwed.com/static/images/detailList/lunbo1.png'
     },
     {
       name: '地下二层',
@@ -25,45 +25,31 @@ Page({
       name: '储物间',
       src: 'https://www.vvwed.com/static/images/detailList/lunbo3.jpg'
     }],
-
-    giftLists2:[],
-    giftLists3:[],
-    giftLists:[
-      {
-        name:'礼品一',
-        id:'11111',
-        images:[
-          'https://www.vvwed.com/static/images/detailList/lunbo1.png',
-          'https://www.vvwed.com/static/images/detailList/lunbo2.jpg',
-          'https://www.vvwed.com/static/images/detailList/lunbo3.jpg',
-          'https://www.vvwed.com/static/images/detailList/lunbo1.png',
-          'https://www.vvwed.com/static/images/detailList/lunbo2.jpg',
-          'https://www.vvwed.com/static/images/detailList/lunbo3.jpg',
-          'https://www.vvwed.com/static/images/detailList/lunbo1.png',
-          'https://www.vvwed.com/static/images/detailList/lunbo2.jpg',
-          'https://www.vvwed.com/static/images/detailList/lunbo3.jpg'
-        ]
-      },
-      {
-        name: '礼品二',
-        images: [
-          'https://www.vvwed.com/static/images/detailList/lunbo1.png',
-          'https://www.vvwed.com/static/images/detailList/lunbo2.jpg',
-          'https://www.vvwed.com/static/images/detailList/lunbo3.jpg',
-          'https://www.vvwed.com/static/images/detailList/lunbo1.png',
-          'https://www.vvwed.com/static/images/detailList/lunbo2.jpg',
-          'https://www.vvwed.com/static/images/detailList/lunbo3.jpg'
-        ]
-      },
-      {
-        name: '礼品三',
-        images: [
-          'https://www.vvwed.com/static/images/detailList/lunbo1.png',
-          'https://www.vvwed.com/static/images/detailList/lunbo2.jpg',
-          'https://www.vvwed.com/static/images/detailList/lunbo3.jpg'
-        ]
-      }
-    ]
+    // giftsList:[
+    //   {
+    //     id: '',
+    //     name:'',
+    //     llgoodsList:[
+      // {
+      //   name: '地下一层',
+      //   src: 'https://www.vvwed.com/static/images/detailList/lunbo1.png'
+      // },{
+      //   name: '地下一层',
+      //   src: 'https://www.vvwed.com/static/images/detailList/lunbo1.png'
+      // }
+    //     ]
+    //   },
+    //   {
+    //     name: '',
+    //     images: [
+    //     ]
+    //   },
+    //   {
+    //     name: '',
+    //     images: [
+    //     ]
+    //   }
+    // ]
   },
 
   /**
@@ -72,7 +58,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      imaggeDetailList: that.data.giftLists[0].images
+      // imageDetailList: that.data.giftLists[0].images
     })
 
     api.get('llBuildingProject/form', {
@@ -80,33 +66,25 @@ Page({
       id:'5b3b98a5eb554cecb3d0b3c3d87a36bc'
     }).then(
       res => {
-        console.log('-------------llBuildingProject/form-----------------');
-        console.log(res);
         that.setData({
-          giftLists2:res.giftsList
+          llGiftsList:res.giftsList
         })
-        api.get('llBuildingProject/data',{
-          flag:'C',
-        }).then(
-          res => {
-            console.log('-------------llBuildingProject/data-----------------');
-            console.log(res);
-            api.get('llGifts/get', {
-              flag: 'C',
-              id:'83e02566e1fe45a282a102d4c2047b71'
-            }
+        // api.get('llBuildingProject/data',{
+        //   flag:'C',
+        // }).then(
+        //   res => {
+        //     api.get('llGifts/get', {
+        //       flag: 'C',
+        //       id:'83e02566e1fe45a282a102d4c2047b71'
+        //     }
 
-            ).then(
-              res => {
-                console.log('-------------llGifts/get-----------------');
-                console.log(res.llGoodsList);
-                // that.setData({
-                //   imaggeDetailList: res.llGoodsList
-                // })
-              }
-            )
-          }
-        )
+        //     ).then(
+        //       res => {
+        //         console.log(res.llGoodsList);
+        //       }
+        //     )
+        //   }
+        // )
       }
       
     ).catch();
@@ -173,7 +151,7 @@ Page({
     that.setData({
       giftTabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60,
-      imaggeDetailList: that.data.giftLists[e.currentTarget.dataset.id].images
+      imageDetailList: that.data.llGiftsList[e.currentTarget.dataset.id].id
     })
 
   
@@ -183,9 +161,9 @@ Page({
     }).then(res => {
       console.log(res.llGoodsList);
       that.setData({
-        giftLists3: res.llGoodsList
+        giftsLists3: res.llGoodsList
       })
-      app.globalData.gifts = that.data.giftLists3;
+      app.globalData.gifts = that.data.giftsLists3;
     }).catch();
   },
   goGiftDetail:function(e){

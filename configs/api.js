@@ -9,10 +9,10 @@ function post(url, data){
 //test
     wx.checkSession({
       success: res => {
-        console.log('没过期');
+        // console.log('没过期');
       },
       fail: res => {
-        console.log('过期');
+       // console.log('过期');
       }
     })  
     wx.request({
@@ -23,11 +23,10 @@ function post(url, data){
         'content-type': 'application/x-www-form-urlencoded' // POST请求
       },
       success: res => {
-        console.log('--------后台返回的数据-------------');
+        console.log('-----------保证有数据------');
         console.log(res);
         if (res.data.errCode === '0'){
-          
-          resolve(res.data);
+           resolve(res.data);
         }else{
           if(res.data.errMsg){
             reject(res.data.errMsg);
@@ -54,11 +53,11 @@ function get(url, data) {
     wx.request({
       url: WxApiRoot + url,
       data: postData,
-
       success: res => {
-        console.log('--------res-------------');
+        console.log('-----------保证有数据------');
         console.log(res);
         if (res.data.errCode === '0') {
+          
           resolve(res.data.rows);
         } else if (res.data.errMsg) {
           reject(res.data.errMsg);

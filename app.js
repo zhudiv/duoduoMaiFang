@@ -9,27 +9,14 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    // wx.login({
-      
-    //   success: res => {
-    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
-    //     console.log(res);
-    //     wx.setStorageSync('code', res.code);
-    //   }
-    // })
     wx.checkSession({
       success: res => {
-        console.log('session没失效')
-        console.log(res);
       },
       fail: res => {
-        console.log('session失效')
         wx.login({
 
           success: res => {
             // 发送 res.code 到后台换取 openId, sessionKey, unionId
-            console.log(res);
             wx.setStorageSync('code', res.code);
           }
         })
@@ -38,7 +25,6 @@ App({
     // 获取用户信息
     wx.getSetting({
       success: res => {
-        console.log('getsetting success')
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
@@ -56,10 +42,10 @@ App({
         }
       },
       fail: res => {
-        console.log('getting fail')
+        //console.log('getting fail');
       },
       complete: res => {
-        console.log('getsetting complete')
+        //console.log('getsetting complete');
       }
     })
   },
