@@ -1,5 +1,5 @@
-var WxApiRoot = 'http://127.0.0.1:8080/a/api/';
-// var WxApiRoot = 'http://47.102.218.103:8080/a/api/';
+// var WxApiRoot = 'http://127.0.0.1:8080/a/api/';
+var WxApiRoot = 'http://47.102.218.103:8080/a/api/';
 
 
 

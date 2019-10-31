@@ -9,7 +9,7 @@
 	<view class="flex  p-xs margin-bottom-sm mb-sm align-center">
       <!-- <view class="flex-sub bg-grey padding-sm margin-xs radius"> -->
 			<view class="flex-sub radius">
-				<image class="imageView" mode="aspectFill" src="{{src}}"></image>
+				<image class="imageView" mode="aspectFill" src="{{pic}}"></image>
 			</view>
       <view class="flex-twice bg-white radius">
 				<view>
