@@ -1,0 +1,26 @@
+/* pages/myOrder/myOrderToPay.wxss */
+.font_vir{
+	font-size:24rpx;
+	font-weight:Regular;
+	line-height: 36rpx;
+	color:rgba(153,153,153,1);
+	opacity: 1;
+}
+
+.break_rule{
+	text-decoration: line-through;
+	font-size: 22rpx !important;
+    color:rgba(153,153,153,1) !important;
+}
+.padding-sm {
+	padding: 8rpx;
+}
+
+.btn{
+	font-size: 28rpx !important; 
+	background-color:#294D7D !important;
+	color:white !important;
+	border-radius:28rpx !important;
+	width: 160rpx !important;
+	height: 56rpx !important;
+}

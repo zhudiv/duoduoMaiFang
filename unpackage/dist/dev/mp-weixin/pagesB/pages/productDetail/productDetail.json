@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "分类详情",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "share": "/component/share",
+    "uni-number-box": "/components/uni-number-box/uni-number-box"
+  }
+}

@@ -1,0 +1,22 @@
+/* pages/llRecord/llRecord.wxss */
+.container{
+ 
+}
+.gift_name{
+	font-size: 28rpx;
+	line-height: 40rpx;
+	color: rgba(51,51,51,1);
+	opacity: 1;
+	font-weight:Regular;
+}
+
+.gift_time{
+	font-size:24rpx;
+	font-weight:Regular;
+	line-height: 36rpx;
+	color:rgba(153,153,153,1);
+	opacity: 1;
+}
+.gift_line_height{
+	margin-top: 24rpx;
+}

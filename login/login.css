@@ -1,0 +1,75 @@
+/* pages/login/login.wxss */
+page{
+	background-color: #EDEDED;
+}
+
+view {
+	padding: 0;
+	margin: 0;
+}
+
+view{
+	display: block;
+}
+
+.lg_img{
+	width: 300rpx;
+	height:112rpx;
+	margin: 80rpx auto 10rpx;
+}
+
+.lg_img image{
+	width: 100%;
+	height: 100%;
+}
+
+.lg_text{
+	text-align: center;
+	margin-top: 18rpx;
+}
+.lg_text text{
+	color: #333333;
+	font-size: 34rpx;
+}
+.lg_account{
+	opacity:0.4;
+	width: 500rpx;
+	height: 80rpx;
+	background-color: #FFFFFF;
+	border-radius: 8rpx;
+	
+}
+.lg_account:first-child{
+	margin:86rpx auto 0;
+}
+
+.lg_account:nth-child(2){
+	margin:40rpx auto 0;
+}
+.lg_account input{
+	height: 80rpx;
+	vertical-align: center;
+	padding-left: 30rpx;
+	line-height:80rpx;
+  font-size: 28rpx;
+  
+  font-weight: Regular;
+}
+
+.lg_btn{
+	width: 500rpx;
+	height: 75rpx;
+	
+	border-radius: 8rpx;
+	margin:86rpx auto 0;
+	color: white;
+	line-height: 80rpx;
+}
+.lg_btn button{
+  background-color: #294D7D;
+	color: white;
+	font-size: 30rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+}

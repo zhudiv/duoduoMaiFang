@@ -1,0 +1,71 @@
+/* pages/myOrder/myOrder.wxss */
+
+.textStyle{
+  font-weight: Regular;
+  font-size: 28rpx;
+  color: #969799;
+}
+
+image{
+  background-size: cover;
+}
+
+.padding-sm {
+	padding: 8rpx;
+}
+
+.btn{
+	font-size: 28rpx !important; 
+	background-color:#294D7D !important;
+	color:white !important;
+	border-radius:28rpx !important;
+	width: 160rpx !important;
+	height: 56rpx !important;
+}
+
+.not_btn{
+	font-size: 28rpx !important; 
+	border:1px solid rgba(204,204,204,1) !important;
+	color:rgba(153,153,153,1) !important;
+	border-radius:28rpx !important;
+	background:rgba(255,255,255,1) !important;
+	width: 160rpx !important;
+	height: 56rpx !important;
+}
+
+.red_not_btn{
+    color:rgba(245,86,86,1);	
+	font-size: 28rpx !important; 
+	border:1px solid rgba(245,86,86,1) !important;
+	border-radius:28rpx !important;
+	background:rgba(255,255,255,1) !important;
+	width: 160rpx !important;
+	height: 56rpx !important;
+}
+
+.break_rule{
+	text-decoration: line-through;
+	font-size: 22rpx !important;
+    color:rgba(153,153,153,1) !important;
+}
+
+.vir{
+	margin-top: 12rpx !important;
+	font-size: 22rpx !important;
+    color:rgba(153,153,153,1) !important;
+}
+
+/* 待付款 */
+.order_obl{
+	color:rgba(245,86,86,1);
+}
+
+/* 待收货 */
+.order_gain{
+	color:rgba(27,161,203,1);
+}
+
+.current{
+	border-bottom: 4rpx solid;
+	color: #294D7D;
+}

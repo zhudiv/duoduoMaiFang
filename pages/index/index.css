@@ -1,0 +1,341 @@
+/**index.wxss**/
+page{
+	background-color: #ffffff;
+}
+.topIndex{
+  width: 95%;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#btnSearch{
+  border-radius: 0.051rem;
+  width: 99%;
+  height:5rpx;
+  background-color:rgba(231, 231, 231, 1);
+  align-items: center;
+  align-content: center;
+}
+.swiper{
+  height: 360rpx;
+}
+.banner_a{
+  width: 95%;
+  height:360rpx;
+  overflow: hidden;  
+  position: relative;
+  margin: 0 auto;
+}
+
+.banner{
+     width: 750rpx;
+     height: 360rpx;
+     overflow: hidden;
+}
+
+
+.tion{
+  width: 95%;
+  height: auto;
+  margin: 20rpx auto 0rpx auto;
+  overflow: hidden;
+}
+
+.tion_li{
+  width: 100%;
+  height: 170rpx;
+  overflow: hidden;
+  float: left;
+  position: relative;
+}
+
+.tion_lia{
+  display: inline-block;
+  position: relative;
+  margin-top: 10rpx;
+  height: 150rpx;
+  width: 25%;
+  margin-bottom: 8px;
+  text-align: center;
+  /* float:left; */
+}
+
+.tion_li_ioc{
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin: 0 auto;
+}
+.tion_li_text{
+  font-size: 24rpx;
+  color:#808080;
+  text-align:center;
+  padding-top: 20rpx;
+
+}
+
+
+.search {
+  height: 88rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.search .input {
+  width: 500rpx;
+  height: 56rpx;
+  background: #ededed;
+  border-radius: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50rpx;
+}
+
+.search .icon {
+  background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-2fb94833aa.png) center no-repeat;
+  background-size: 100%;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.search .txt {
+  height: 42rpx;
+  line-height: 42rpx;
+  color: #666;
+  padding-left: 10rpx;
+  font-size: 30rpx;
+}
+
+.search-left{
+  display: flex;
+  background: #ededed;
+  border-radius: 28rpx;
+  padding: 8rpx 10rpx;
+	display: flex;
+	align-items: center;
+}
+
+.location{
+  width: 32rpx;
+  height:36rpx;
+  display: inline-block;
+}
+
+.address{
+  color: rgba(51, 51, 51, 1);
+  font-size: 28rpx;
+}
+
+.separate {
+  background: #e0e3da;
+  width: 100%;
+  height: 25rpx;
+}
+
+.news{
+  width: 96%;
+	margin:0 auto;
+	background-color: #F8F8F8;
+	height:80upx;
+	border-radius:40upx;
+	display: flex;
+	align-items: center;
+	padding-left: 40upx;
+	padding-right: 40upx;
+}
+.news image{
+  width: 30rpx;
+  height: 36rpx;
+  vertical-align: middle;
+}
+.news text{
+  color: rgba(102, 102, 102, 1);
+  font-size: 22rpx;
+}
+
+
+/**限时优惠**/
+.verticalSpetrate{
+  width: 6rpx;
+  height: 20rpx;
+  background-color: #294D7D;
+  margin-right: 4rpx;
+}
+.square{
+  width: 44rpx;
+  height: 44rpx;
+  background-color: rgba(0, 186, 173, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 24rpx;
+  line-height: 44rpx;
+  text-align: center;
+}
+.colon{
+  color: rgba(80, 80, 80, 1);
+}
+
+.buying{
+  color: #999999;
+  font-size: 24rpx;
+  padding-left:240rpx;
+}
+.limitSale .HDS_style{
+  padding-left: 38rpx;
+  padding-right: 5rpx;
+  display: inline-block;
+  position: relative;
+}
+.limitSale .HDS_style_Coupon{
+  position: absolute;
+  background-color: rgba(253, 118, 118, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 14rpx;
+}
+.limitSale .discount{
+  color: #666;
+  margin-right: 20rpx;
+}
+
+.limitSale .shop_one_text{
+  color: rgba(80, 80, 80, 1);
+  font-size: 26rpx;
+}
+.limitSale .shop_new_price{
+  color: rgba(51, 51, 51, 1);
+  font-size: 20rpx;
+}
+.limitSale .shop_old_price{
+  color: rgba(212, 48, 48, 1);
+  font-size: 20rpx;
+}
+.limitSale .shop_member{
+  background-color: rgba(51, 51, 51, 1);
+  border-top-right-radius:14rpx;
+  border-bottom-left-radius:14rpx;
+  color: rgba(241, 199, 123, 1);
+  font-size: 16rpx;
+}
+/**限时优惠**/
+
+
+/**以下为车位、住宅栏**/
+.navbar{
+  display: flex;
+  padding-bottom: 34rpx;
+}
+.navbar-item {
+    flex: 1.0;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: -1px;
+}
+.navbar-text{
+  color: rgba(153, 153, 153, 1);
+   display: block;
+   font-size: 28rpx;
+    padding: 10px;
+    margin: auto;
+}
+.navbar-text.active {
+    border-bottom: 2px solid rgba(7, 171, 159, 1);
+    color: rgba(7, 171, 159, 1);
+}
+
+.CarHomeLists .carList{
+  padding-left: 28rpx;
+}
+.CarHomeLists .carList .carImage{
+  display: inline-block;
+}
+.CarHomeLists .carList .carImage image{
+  width: 300rpx;
+  height: 180rpx;
+}
+.CarHomeLists .carList .carInfo{
+  display: inline-block;
+  padding-left: 22rpx;
+  vertical-align: top;
+}
+/* .CarHomeLists .carList .carInfo text{
+  color: red;
+} */
+.carInfo2{
+  margin-top:16rpx;
+  margin-bottom: 28rpx;
+}
+.carInfo_name{
+  color: rgba(51, 51, 51, 1);
+  font-size: 30rpx;
+}
+.carInfo_detail1{
+  border: 2rpx solid rgba(7, 171, 159, 1);
+  border-radius: 4rpx;
+  color: rgba(7, 171, 159, 1);
+  font-size: 24rpx;
+  margin-right: 12rpx;
+}
+.carInfo_detail2{
+  border: 2rpx solid rgba(210, 162, 89, 1);
+  border-radius: 4rpx;
+  color: rgba(210, 162, 89, 1);
+  font-size: 24rpx;
+}
+.carInfo_price{
+  color: rgba(245, 86, 86, 1);
+  font-size: 28rpx;
+}
+
+.homeInfo_name{
+  color: rgba(51, 51, 51, 1);
+  font-size: 30rpx;
+}
+
+.homeInfo2{
+  margin-top:16rpx;
+  margin-bottom: 28rpx;
+}
+.homeInfo_detail1{
+  background-color: rgba(253, 159, 89, 1);
+  padding: 6rpx 8rpx;
+  border-radius: 4rpx;
+  color: rgba(255, 255, 255, 1);
+  font-size: 20rpx;
+  margin-right: 12rpx;
+}
+.homeInfo_detail11{
+  background-color: rgba(248, 110, 110, 1);
+  padding: 6rpx 8rpx;
+  border-radius: 4rpx;
+  color: rgba(255, 255, 255, 1);
+  font-size: 20rpx;
+  margin-right: 12rpx;
+}
+.homeInfo_detail2{
+  background-color: rgba(229, 229, 229, 1);
+  padding: 6rpx 8rpx;
+  border-radius: 4rpx;
+  color: rgbargba(153, 153, 153, 1);
+  font-size: 20rpx;
+}
+/**以上为车位、住宅栏**/
+
+/* 新品推荐 */
+.newProduct{
+  width: 100%;
+  height:120rpx;
+}
+
+.newProduct_image{
+  width: 24rpx;
+  height: 24rpx;
+}
+/* 新品推荐 */

@@ -1,0 +1,42 @@
+/* pages/afterSale/afterSaleLogin.wxss */
+.btn{
+	font-size: 28rpx !important; 
+	background-color:#294D7D !important;
+	color:white !important;
+	border-radius:28rpx !important;
+	width: 160rpx !important;
+	height: 56rpx !important;
+}
+.not_btn{
+	font-size: 28rpx !important; 
+	border:1px solid rgba(41,77,125,1) !important;
+	color:rgba(41,77,125,1) !important;
+	border-radius:28rpx !important;
+	background:rgba(255,255,255,1) !important;
+	width: 160rpx !important;
+	height: 56rpx !important;
+}
+.font_vir{
+	font-size:24rpx;
+	font-weight:Regular;
+	line-height: 36rpx;
+	color:rgba(153,153,153,1);
+	opacity: 1;
+}
+/* 申请 */
+.apply {
+	color:rgba(0,186,173,1) !important;
+}
+/* 驳回 */
+.reject{
+color:rgba(245,86,86,1);
+}
+/* 退款中 */
+.refund{
+color:rgba(27,161,203,1);
+}
+/* 已完成 */
+.success{
+color:rgba(51,51,51,1);
+}
+

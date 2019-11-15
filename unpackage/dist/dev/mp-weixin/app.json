@@ -1,0 +1,95 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/myOrder/myOrder",
+    "pages/request-payment/request-payment",
+    "pages/afterSaleing/afterSaleing",
+    "pages/afterSale/afterSale",
+    "pages/shopEvaluate/shopEvaluate",
+    "pages/evaluate/evaluate",
+    "pages/addrEdit/addrEdit",
+    "pages/addrList/addrList",
+    "pages/llRecord/llRecord",
+    "pages/giftHistory/giftHistory",
+    "pages/myOrder/myOrderToPay",
+    "pages/afterSale/afterSaleLogin",
+    "pages/afterSale/afterSaleRate",
+    "pages/market/market",
+    "pages/giftDetail/giftDetail",
+    "pages/projectList/projectList",
+    "pages/projectDetail/projectDetail",
+    "pages/exchange/exchange",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/login/mobileLogin",
+    "pages/logs/logs"
+  ],
+  "subPackages": [
+    {
+      "root": "pagesB",
+      "pages": [
+        "pages/category/category",
+        "pages/category/categoryDetail",
+        "pages/productDetail/productDetail"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "邻里物联",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./static/images/icon_home.png",
+        "selectedIconPath": "./static/images/icon_homea.png"
+      },
+      {
+        "pagePath": "pages/market/market",
+        "text": "业主超市",
+        "iconPath": "./static/images/icon_market.png",
+        "selectedIconPath": "./static/images/icon_marketa.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "购物车",
+        "iconPath": "./static/images/icon_shopping.png",
+        "selectedIconPath": "./static/images/icon_shoppinga.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./static/images/icon_my.png",
+        "selectedIconPath": "./static/images/icon_mya.png"
+      }
+    ]
+  },
+  "preloadRule": {
+    "pagesB/pages/category/category": {
+      "network": "all",
+      "packages": [
+        "pagesB"
+      ]
+    },
+    "pagesB/pages/category/categoryDetail": {
+      "network": "all",
+      "packages": [
+        "pagesB"
+      ]
+    },
+    "pagesB/pages/productDetail/productDetail": {
+      "network": "all",
+      "packages": [
+        "pagesB"
+      ]
+    }
+  },
+  "usingComponents": {
+    "button-diy": "/components/button-diy",
+    "toolbar": "/components/toolbar"
+  }
+}

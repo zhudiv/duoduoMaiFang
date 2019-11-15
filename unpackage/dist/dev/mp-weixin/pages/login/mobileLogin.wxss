@@ -1,0 +1,31 @@
+.login-head{
+	width: 100%;
+	margin-top: 200rpx;
+	text-align: center;
+}
+.login-box {
+  width: 520rpx;
+  margin: 80rpx auto 20rpx;
+	border-bottom: 1rpx solid #CCCCCC;
+	padding-bottom: 20rpx;
+}
+.code-box{
+	width: 520rpx;
+	margin: 0 auto;
+	border-bottom: 1rpx solid #CCCCCC;
+	padding-bottom: 20rpx;
+}
+.login-btn{
+	width: 100%;
+	margin-top: 58rpx;
+	height: 88rpx;
+	text-align: center;
+}
+.sbBtn{
+	height: 88rpx;
+	width: 520rpx;
+	background-color: #294D7D !important;
+	border-radius: 44rpx !important;
+	color: #fff;
+}
+

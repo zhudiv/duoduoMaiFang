@@ -1,0 +1,103 @@
+miniprogram to uni-app 转换日志
+
+---基本信息---
+时间: 2019-11-08 16:27:48
+转换模式: Hbuilder X
+是否转换wxs文件: true
+
+---小程序基本信息---
+name: 多多卖房
+version: 
+description: 
+appid: wx452861bdcf531613
+projectname: 
+compileType: miniprogram
+author: 
+
+---目录信息---
+sourceFolder: D:\Workspaces\WX\多多卖房
+targetFolder: D:\Workspaces\WX\多多卖房_uni
+outputFolder: D:\Workspaces\WX\多多卖房_uni
+miniprogramRoot: D:\Workspaces\WX\多多卖房
+
+---日志信息---
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\miniprogram_npm\vant-weapp\picker-column\index.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\miniprogram_npm\vant-weapp\progress\index.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\miniprogram_npm\vant-weapp\tree-select\index.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\miniprogram_npm\vant-weapp\wxs\array.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\miniprogram_npm\vant-weapp\wxs\bem.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\miniprogram_npm\vant-weapp\wxs\memoize.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\miniprogram_npm\vant-weapp\wxs\object.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\miniprogram_npm\vant-weapp\wxs\utils.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\dist\progress\index.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\dist\tree-select\index.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\dist\picker-column\index.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\dist\wxs\array.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\dist\wxs\bem.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\dist\wxs\memoize.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\dist\wxs\object.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\dist\wxs\utils.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\lib\picker-column\index.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\lib\progress\index.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\lib\tree-select\index.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\lib\wxs\array.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\lib\wxs\memoize.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\lib\wxs\bem.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\lib\wxs\object.js success!
+Convert wxs file D:\Workspaces\WX\多多卖房_uni\node_modules\vant-weapp\lib\wxs\utils.js success!
+image漏网之鱼:    src--> "{{userInfo.avatarUrl}}"     file--> login\login.wxml
+image漏网之鱼:    src--> "{{ src }}"     file--> dist\avatar\index.wxml
+image漏网之鱼:    src--> "{{ thumb }}"     file--> dist\card\index.wxml
+image漏网之鱼:    src--> "{{ current ? currentImg : img }}"     file--> dist\tab-bar-item\index.wxml
+image漏网之鱼:    src--> "{{ image }}"     file--> dist\toast\index.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/evaluate/1.png"     file--> pages\afterSale\afterSale.wxml
+image漏网之鱼:    src--> "{{imgList[index]}}"     file--> pages\afterSale\afterSale.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/evaluate/1.png"     file--> pages\afterSaleing\afterSaleing.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/evaluate/1.png"     file--> pages\evaluate\evaluate.wxml
+template里data属性包含...扩展运算符时，不支持转换(因uni-app还不支持v-bind="")，请预先手动修改:     data--> {{..._toast_ }}    file--> pages\exchange\exchange.wxml
+image漏网之鱼:    src--> "{{item.thumb}}"     file--> pages\giftDetail\giftDetail.wxml
+image漏网之鱼:    src--> "{{mov.Picture}}"     file--> pages\index\index.wxml
+image漏网之鱼:    src--> "{{lis.src}}"     file--> pages\index\index.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/index/home_index_car.png"     file--> pages\index\index.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/index/home_index_house.png"     file--> pages\index\index.wxml
+image漏网之鱼:    src--> "{{item.url}}"     file--> pages\market\market.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/market/1111.png"     file--> pages\market\market.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/market/2222.png"     file--> pages\market\market.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/market/3333.png"     file--> pages\market\market.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/market/4444.png"     file--> pages\market\market.wxml
+image漏网之鱼:    src--> "{{item.image}}"     file--> pages\market\market.wxml
+image漏网之鱼:    src--> "{{item.image}}"     file--> pages\market\market.wxml
+image漏网之鱼:    src--> "{{item.image}}"     file--> pages\market\market.wxml
+image漏网之鱼:    src--> "{{item.image}}"     file--> pages\market\market.wxml
+image漏网之鱼:    src--> "{{item.image}}"     file--> pages\market\market.wxml
+template里data属性包含...扩展运算符时，不支持转换(因uni-app还不支持v-bind="")，请预先手动修改:     data--> {{..._toast_ }}    file--> pages\my\my.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/orders/1.png"     file--> pages\myOrder\myOrder.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/orders/1.png"     file--> pages\myOrder\myOrder.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/orders/1.png"     file--> pages\myOrder\myOrder.wxml
+image漏网之鱼:    src--> "{{imageLists[TabCur].pic}}"     file--> pages\projectDetail\projectDetail.wxml
+image漏网之鱼:    src--> "{{item.thumb}}"     file--> pages\projectDetail\projectDetail.wxml
+template里data属性包含...扩展运算符时，不支持转换(因uni-app还不支持v-bind="")，请预先手动修改:     data--> {{...mov}}    file--> pages\projectList\projectList.wxml
+template里data属性包含...扩展运算符时，不支持转换(因uni-app还不支持v-bind="")，请预先手动修改:     data--> {{...mov}}    file--> pages\projectList\projectList.wxml
+image漏网之鱼:    src--> "https://www.vvwed.com/static/images/evaluate/1.png"     file--> pages\shopEvaluate\shopEvaluate.wxml
+image漏网之鱼:    src--> "{{imgList[index]}}"     file--> pages\shopEvaluate\shopEvaluate.wxml
+image漏网之鱼:    src--> "{{pic}}"     file--> template\listview\listView.wxml
+image漏网之鱼:    src--> "{{ thumb }}"     file--> miniprogram_npm\vant-weapp\card\index.wxml
+image漏网之鱼:    src--> "{{ name }}"     file--> miniprogram_npm\vant-weapp\icon\index.wxml
+image漏网之鱼:    src--> "{{ thumb }}"     file--> node_modules\vant-weapp\dist\card\index.wxml
+image漏网之鱼:    src--> "{{ name }}"     file--> node_modules\vant-weapp\dist\icon\index.wxml
+image漏网之鱼:    src--> "{{ thumb }}"     file--> node_modules\vant-weapp\lib\card\index.wxml
+image漏网之鱼:    src--> "{{ name }}"     file--> node_modules\vant-weapp\lib\icon\index.wxml
+
+转换完成: 
+耗时：18293ms
+当前转换模式：【Hbuilder X】，生成HbuilderX项目。
+优点：上手快，项目结构较简单；
+缺点：资源路径会因为表达式而无法全部被修复(推荐vue-cli模式)
+
+注意：
+1.当看到"image漏网之鱼"，意味着您需要手动调整对应代码，当image标签的src属性是含变量或表达式，工具还无法做到100%转换，需要手动修改为相对/static目录的路径(使用vue-cli模式可以解决，参数：-c)
+2.代码<template is="abc" data=""/>里data属性，除了不支持...扩展运算符(因uni-app现在还不支持v-bind="")，其余参数形式都支持，望知悉！
+
+日志说明：
+1. image漏网之鱼 --> 为HbuilderX模式时，需要将资源移动到static，并且修复相应文件路径，有可能src为网络文件，有可能为变量或表达式，可能会导致转换后文件找不到，因此提示一下
+2. 暂不支持include标签，请手动修复 --> include标签没有一个明显的标识0，工具确实可以替换这部分事，只是会导致工具代码交错复杂，暂时不支持转换。建议转换完，自行拷贝相应的文件内容，替换对应的include标签

@@ -1,0 +1,16 @@
+
+page{
+	background-color: #FFFFFF;
+}
+.cu-item{
+	font-size: 28rpx;
+	line-height: 40rpx;
+	font-weight: regular;
+}
+.noactive{
+	color: #969799;
+}
+.active{
+	color: #323233;
+}
+
